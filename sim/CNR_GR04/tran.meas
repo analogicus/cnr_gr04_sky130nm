@@ -1,0 +1,11 @@
+* Measure CNR_GR04
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+    *meas tran IN+ find V(in+) at 5ns
+
+echo "MEAS_END"
+.endc
