@@ -32,9 +32,9 @@ only_toplevel=false
 value=
 "
 *.OPTIONS RELTOL=.01
-.tran 1ns 1us
+*.tran 1ns 1us
 *.dc V4 -0.1 0.1 0.01
-*.dc TEMP -40 125 5
+.dc TEMP -40 125 5
 .save all
 .save i(V_OUT)
 "}
