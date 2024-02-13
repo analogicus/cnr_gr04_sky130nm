@@ -23,7 +23,7 @@ N -0 -150 -0 -130 {
 lab=VDD}
 N 0 -0 -0 30 {
 lab=GND}
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} -40 0 0 0 {name=x1 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} -40 0 0 0 {name=x1 }
 C {devices/vsource.sym} -230 70 0 0 {name=Vin value=1.8 savecurrent=true}
 C {devices/vsource.sym} -370 70 0 0 {name=VDD value=1.8 savecurrent=true}
 C {devices/gnd.sym} 0 130 0 0 {name=l2 lab=GND}

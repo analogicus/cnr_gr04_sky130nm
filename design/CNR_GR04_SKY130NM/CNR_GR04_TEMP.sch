@@ -52,13 +52,13 @@ lab=VDD_1V8}
 N 980 -90 980 -60 {
 lab=VDD_1V8}
 N 1020 -60 1150 -60 {
-lab=xxx}
+lab=I_ref}
 N 980 -30 980 50 {
-lab=xxx}
+lab=I_ref}
 N 1080 -60 1080 0 {
-lab=xxx}
+lab=I_ref}
 N 980 0 1080 0 {
-lab=xxx}
+lab=I_ref}
 C {sky130_fd_pr/diode.sym} 180 230 2 0 {name=D1
 model=diode_pw2nd_05v5
 area=1e12
@@ -76,8 +76,8 @@ W=1
 L=1
 model=res_generic_m1
 mult=1}
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 350 -60 0 0 {name=x1 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 220 -60 0 1 {name=x2 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 350 -60 0 0 {name=x1 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 220 -60 0 1 {name=x2 }
 C {devices/lab_pin.sym} 120 20 0 0 {name=p3 sig_type=std_logic lab=Vd1
 }
 C {devices/lab_pin.sym} 540 20 0 1 {name=p4 sig_type=std_logic lab=~Vd1
@@ -85,6 +85,6 @@ C {devices/lab_pin.sym} 540 20 0 1 {name=p4 sig_type=std_logic lab=~Vd1
 C {devices/lab_pin.sym} 540 160 0 1 {name=p5 sig_type=std_logic lab=Vd2}
 C {devices/lab_pin.sym} 280 20 0 0 {name=p6 sig_type=std_logic lab=V1
 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 1150 -60 0 0 {name=x3 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 1020 -60 0 1 {name=x4 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 1150 -60 0 0 {name=x3 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_2C4F0.sym} 1020 -60 0 1 {name=x4 }
 C {devices/opin.sym} 980 50 1 0 {name=p7 lab=I_ref}

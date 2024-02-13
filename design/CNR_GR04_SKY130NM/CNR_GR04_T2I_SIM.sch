@@ -23,7 +23,7 @@ N 320 160 320 180 {
 lab=VSS}
 N 320 180 320 200 {
 lab=VSS}
-C {CNR_GR04_SKY130NM/CNR_GR04_T2I_PK.sym} 130 10 0 0 {name=x1}
+C {CNR_GR04_T2I.sym} 130 10 0 0 {name=x1}
 C {devices/vsource.sym} -440 30 0 0 {name=VDD value=1.8 savecurrent=false}
 C {devices/vdd.sym} -440 0 0 0 {name=l9 lab=VDD_1V8}
 C {devices/gnd.sym} -440 60 0 0 {name=l10 lab=VSS}

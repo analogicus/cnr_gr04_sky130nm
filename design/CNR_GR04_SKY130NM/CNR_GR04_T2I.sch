@@ -24,7 +24,7 @@ lab=VSS}
 N 200 -30 200 0 {
 lab=VDD_1V8}
 N 200 170 200 220 {
-lab=vd_n}
+lab=VD_N}
 N 200 30 200 110 {
 lab=Vd_p_temp}
 N 40 0 160 0 {
@@ -32,11 +32,11 @@ lab=#net1}
 N 70 0 70 30 {
 lab=#net1}
 N 0 170 0 230 {
-lab=vd_p}
+lab=VD_P}
 N 0 110 0 170 {
-lab=vd_p}
+lab=VD_P}
 N 70 90 70 140 {
-lab=OUT4}
+lab=OPAMP1_OUT}
 N 390 30 390 160 {
 lab=I_OUT}
 N 390 -30 390 0 {
@@ -68,21 +68,21 @@ lab=VDD_1V8}
 N 0 -100 0 -70 {
 lab=VDD_1V8}
 N 1030 110 1030 140 {
-lab=OUT4}
+lab=OPAMP1_OUT}
 N 1030 200 1030 250 {
 lab=VSS}
 N 1030 170 1030 200 {
 lab=VSS}
 N 1030 60 1030 110 {
-lab=OUT4}
+lab=OPAMP1_OUT}
 N 1030 250 1030 310 {
 lab=VSS}
 N 1030 110 1070 110 {
-lab=OUT4}
+lab=OPAMP1_OUT}
 N 830 130 830 140 {
 lab=#net2}
 N 1030 30 1030 60 {
-lab=OUT4}
+lab=OPAMP1_OUT}
 N 1030 -50 1030 -30 {
 lab=#net3}
 N 830 30 830 130 {
@@ -178,7 +178,7 @@ lab=I_OUT}
 N 390 180 420 180 {
 lab=I_OUT}
 N -10 30 -0 30 {
-lab=vd_p}
+lab=VD_P}
 N -10 0 -0 0 {
 lab=VDD_1V8}
 N -10 -30 -0 -30 {
@@ -186,9 +186,9 @@ lab=VDD_1V8}
 N -10 -30 -10 0 {
 lab=VDD_1V8}
 N -10 30 -10 110 {
-lab=vd_p}
+lab=VD_P}
 N -10 110 -0 110 {
-lab=vd_p}
+lab=VD_P}
 N -10 -70 -10 -30 {
 lab=VDD_1V8}
 N -10 -70 -0 -70 {
@@ -203,41 +203,40 @@ model=pnp_05v5_W3p40L3p40
 m=4
 spiceprefix=X
 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 40 0 0 1 {name=x18 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 160 0 0 0 {name=x19 }
-C {devices/lab_pin.sym} 70 140 0 1 {name=p21 sig_type=std_logic lab=OUT4
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 40 0 0 1 {name=x18}
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 160 0 0 0 {name=x19 }
+C {devices/lab_pin.sym} 70 140 0 1 {name=p21 sig_type=std_logic lab=OPAMP1_OUT
 }
 C {devices/res.sym} 200 140 0 0 {name=R3
 value=1k
 footprint=1206
 device=resistor
 m=1}
-C {devices/lab_pin.sym} 200 190 0 1 {name=p22 sig_type=std_logic lab=vd_n}
-C {devices/lab_pin.sym} 0 190 0 0 {name=p15 sig_type=std_logic lab=vd_p}
-C {devices/lab_pin.sym} 200 70 0 1 {name=p18 sig_type=std_logic lab=Vd_p_temp}
+C {devices/lab_pin.sym} 200 190 0 1 {name=p22 sig_type=std_logic lab=VD_N}
+C {devices/lab_pin.sym} 0 190 0 0 {name=p15 sig_type=std_logic lab=VD_P}
 C {devices/res.sym} 70 60 0 0 {name=R4
 value=1k
 footprint=1206
 device=resistor
 m=1}
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 350 0 0 0 {name=x23 }
-C {devices/lab_pin.sym} 1070 110 0 1 {name=p14 sig_type=std_logic lab=OUT4
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 350 0 0 0 {name=x23 }
+C {devices/lab_pin.sym} 1070 110 0 1 {name=p14 sig_type=std_logic lab=OPAMP1_OUT
 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} 870 170 0 1 {name=x13 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} 990 170 0 0 {name=x14 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 1070 0 0 1 {name=x15 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 790 0 0 0 {name=x16 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} 870 170 0 1 {name=x13 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_2C2F0.sym} 990 170 0 0 {name=x14 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 1070 0 0 1 {name=x15 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C1F2.sym} 790 0 0 0 {name=x16 }
 C {devices/lab_pin.sym} 770 0 0 0 {name=p19 sig_type=std_logic lab=VD_N}
 C {devices/lab_pin.sym} 1090 0 0 1 {name=p20 sig_type=std_logic lab=VD_P}
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 640 -120 0 1 {name=x17 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 790 -120 0 0 {name=x20 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 640 -120 0 1 {name=x17 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 790 -120 0 0 {name=x20 }
 C {devices/res.sym} 600 0 0 0 {name=R5
 value=5k
 footprint=1206
 device=resistor
 m=1}
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 640 -220 0 1 {name=x21 }
-C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 790 -220 0 0 {name=x22 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 640 -220 0 1 {name=x21 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F2.sym} 790 -220 0 0 {name=x22 }
 C {devices/ipin.sym} -140 -340 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -140 440 0 0 {name=p2 lab=VSS}
 C {devices/opin.sym} 420 180 0 0 {name=p3 lab=I_OUT}
