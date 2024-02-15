@@ -1,0 +1,16 @@
+* Measure DIFF_BJT
+.control
+
+load {cicname}.raw
+
+echo "MEAS_START"
+
+    meas tran VCMR_1_MAX find V(OUT_1) at=-40
+    meas tran VCMR_1_MIN find V(OUT_1) at=125
+
+    meas tran VCMR_1_MAX find V(OUT_6) at=-40
+    meas tran VCMR_1_MIN find V(OUT_6) at=125
+
+
+echo "MEAS_END"
+.endc

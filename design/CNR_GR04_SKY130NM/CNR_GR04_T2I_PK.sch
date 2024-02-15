@@ -241,3 +241,4 @@ C {/home/peter/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_8C1F
 C {devices/ipin.sym} -140 -340 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} -140 440 0 0 {name=p2 lab=VSS}
 C {devices/opin.sym} 420 180 0 0 {name=p3 lab=I_OUT}
+C {CNR_ATR_SKY130NM/CNR_ATR_SKY130NM/CNRATR_NCH_12C1F2.sym} 160 -240 0 0 {name=x1 }
