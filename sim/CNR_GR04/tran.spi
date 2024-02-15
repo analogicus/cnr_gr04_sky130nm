@@ -6,7 +6,7 @@
 .include ../../../work/lpe/CNR_GR04_lpe.spi
 #else
 .include ../../../work/xsch/CNR_GR04.spice
-.include ../../../work/xsch/CNR_GR04_T2I_PK.spice
+.include ../../../work/xsch/CNR_GR04_T2I.spice
 #endif
 
 *-----------------------------------------------------------------
