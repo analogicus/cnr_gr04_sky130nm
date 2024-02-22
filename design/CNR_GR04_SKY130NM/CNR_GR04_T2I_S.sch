@@ -99,14 +99,15 @@ N 1360 -530 1360 -420 {
 lab=VIN}
 N 1580 -430 1580 -390 {
 lab=#net3}
-N 1580 -310 1580 -170 {
-lab=VSS}
 N 1360 -420 1360 -400 {
 lab=VIN}
 N 1580 -390 1580 -370 {
 lab=#net3}
 N 1330 -370 1340 -370 {
 lab=VSS}
+N 1580 -290 1580 -170 {
+lab=VSS}
+N 1550 -330 1560 -330 {}
 C {devices/ipin.sym} 1170 -650 0 0 {name=p1 lab=VDD_1V8}
 C {sky130_fd_pr/pnp_05v5.sym} 1340 -270 0 0 {name=Q1
 model=pnp_05v5_W3p40L3p40
@@ -127,14 +128,6 @@ C {devices/lab_pin.sym} 990 -460 0 1 {name=p8 sig_type=std_logic lab=VIP}
 C {devices/lab_pin.sym} 510 -370 0 0 {name=p4 sig_type=std_logic lab=VIP}
 C {devices/lab_pin.sym} 830 -410 0 1 {name=p9 sig_type=std_logic lab=OPAMP_O}
 C {devices/lab_pin.sym} 1170 -520 0 0 {name=p2 sig_type=std_logic lab=OPAMP_O}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym} 1010 -560 0 1 {name=x1 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym} 1320 -560 0 0 {name=x3 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym} 1540 -560 0 0 {name=x2 }
-C {devices/res.sym} 1580 -340 0 0 {name=R2
-value=10k
-footprint=1206
-device=resistor
-m=1}
 C {sky130_fd_pr/res_high_po.sym} 1360 -370 0 0 {name=R3
 W=0.72
 L=8.8
@@ -142,3 +135,8 @@ model=res_high_po
 spiceprefix=X
 mult=6}
 C {devices/lab_pin.sym} 1330 -370 0 0 {name=p6 sig_type=std_logic lab=VSS}
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1010 -560 0 1 {name=x5 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1540 -560 0 0 {name=x1 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1320 -560 0 0 {name=x2 }
+C {devices/lab_pin.sym} 1550 -330 0 0 {name=p7 sig_type=std_logic lab=VSS}
+C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 1580 -370 1 0 {name=x13 }

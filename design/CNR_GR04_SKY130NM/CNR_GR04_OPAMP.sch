@@ -12,11 +12,9 @@ lab=#net1}
 N 260 -250 260 -220 {
 lab=#net2}
 N 230 -280 260 -280 {
-lab=#net2}
+lab=VSS}
 N 230 -280 230 -240 {
-lab=#net2}
-N 230 -240 260 -240 {
-lab=#net2}
+lab=VSS}
 N 260 -160 260 -120 {
 lab=VSS}
 N 260 -120 420 -120 {
@@ -38,11 +36,9 @@ lab=VSS}
 N 420 -250 420 -220 {
 lab=#net3}
 N 420 -280 450 -280 {
-lab=#net3}
+lab=VSS}
 N 450 -280 450 -240 {
-lab=#net3}
-N 420 -240 450 -240 {
-lab=#net3}
+lab=VSS}
 N 300 -280 380 -280 {
 lab=#net1}
 N 300 -190 380 -190 {
@@ -57,8 +53,6 @@ N 340 -320 340 -280 {
 lab=#net1}
 N 330 -120 330 -70 {
 lab=VSS}
-N 420 -370 420 -310 {
-lab=#net4}
 N 370 -520 420 -520 {
 lab=VDD_1V8}
 N 420 -520 420 -470 {
@@ -69,8 +63,6 @@ N 390 -480 390 -440 {
 lab=VDD_1V8}
 N 390 -480 420 -480 {
 lab=VDD_1V8}
-N 420 -410 420 -370 {
-lab=#net4}
 N 460 -440 770 -440 {
 lab=#net4}
 N 420 -520 810 -520 {
@@ -98,13 +90,9 @@ lab=#net5}
 N 720 -380 720 -360 {
 lab=#net5}
 N 860 -330 880 -330 {
-lab=#net5}
-N 860 -380 860 -330 {
-lab=#net5}
+lab=VDD_1V8}
 N 720 -330 740 -330 {
-lab=#net5}
-N 740 -380 740 -330 {
-lab=#net5}
+lab=VDD_1V8}
 N 920 -330 940 -330 {
 lab=VIP}
 N 660 -330 680 -330 {
@@ -155,10 +143,8 @@ N 940 -260 940 -210 {
 lab=#net7}
 N 940 -210 1090 -210 {
 lab=#net7}
-N 1020 -260 1040 -260 {
-lab=#net8}
 N 1100 -260 1130 -260 {
-lab=#net9}
+lab=#net8}
 N 1130 -180 1130 -90 {
 lab=VSS}
 N 1130 -210 1160 -210 {
@@ -175,56 +161,66 @@ N 330 -80 800 -80 {
 lab=VSS}
 N 1130 -380 1150 -380 {
 lab=OPAMP_VOUT}
-N 480 -440 480 -390 {
-lab=#net4}
-N 420 -390 480 -390 {
-lab=#net4}
-N 260 -510 260 -450 {
-lab=VDD_1V8}
 N 1130 -410 1130 -350 {
 lab=OPAMP_VOUT}
 N 1130 -290 1130 -240 {
-lab=#net9}
+lab=#net8}
 N 810 -520 1130 -520 {
-lab=VDD_1V8}
-N 260 -450 260 -410 {
 lab=VDD_1V8}
 N 880 -260 940 -260 {
 lab=#net7}
-N 940 -260 960 -260 {
-lab=#net7}
-N 260 -410 260 -390 {
+N 420 -410 420 -390 {
+lab=#net4}
+N 420 -330 420 -310 {
+lab=#net9}
+N 470 -440 470 -400 {
+lab=#net4}
+N 420 -400 470 -400 {
+lab=#net4}
+N 450 -240 450 -190 {
+lab=VSS}
+N 230 -240 230 -190 {
+lab=VSS}
+N 740 -520 740 -330 {
 lab=VDD_1V8}
+N 860 -520 860 -330 {
+lab=VDD_1V8}
+N 260 -350 260 -330 {
+lab=#net1}
+N 260 -510 260 -430 {
+lab=VDD_1V8}
+N 230 -390 230 -280 {
+lab=VSS}
+N 230 -390 240 -390 {
+lab=VSS}
+N 980 -300 980 -280 {
+lab=VSS}
+N 1020 -260 1040 -260 {
+lab=#net10}
 C {devices/ipin.sym} 260 -550 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 330 -70 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 660 -330 0 0 {name=p3 lab=VIN}
 C {devices/ipin.sym} 940 -330 0 1 {name=p4 lab=VIP}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 760 -220 0 1 {name=x11 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 840 -220 0 0 {name=x12 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1090 -210 0 0 {name=x13 }
 C {devices/capa.sym} 1070 -260 3 0 {name=C1
 m=1
-value=10u
+value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/opin.sym} 1150 -380 0 0 {name=p5 lab=OPAMP_VOUT}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 460 -440 0 1 {name=x1 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 770 -440 0 0 {name=x6 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 1090 -440 0 0 {name=x7 }
 C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 680 -330 0 0 {name=x8 }
 C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 920 -330 0 1 {name=x9 }
 C {devices/vsource.sym} 1130 -320 0 0 {name=V_OPAMP_OUT value=0 savecurrent=false}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 380 -280 0 0 {name=x2 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 300 -280 0 1 {name=x3 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 300 -190 0 1 {name=x4 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 380 -190 0 0 {name=x5 }
-C {devices/res.sym} 990 -260 3 0 {name=R1
-value=1k
-footprint=1206
-device=resistor
-m=1}
-C {devices/res.sym} 260 -360 0 0 {name=R2
-value=90k
-footprint=1206
-device=resistor
-m=1}
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -280 0 1 {name=x2 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -190 0 1 {name=x3 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -190 0 0 {name=x4 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -280 0 0 {name=x5 }
+C {devices/vsource.sym} 420 -360 0 0 {name=V_IREF value=0 savecurrent=false}
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 760 -220 0 1 {name=x12 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 840 -220 0 0 {name=x10 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 1090 -440 0 0 {name=x1 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 770 -440 0 0 {name=x6 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 460 -440 0 1 {name=x7 }
+C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1090 -210 0 0 {name=x11 }
+C {devices/lab_pin.sym} 980 -300 0 0 {name=p6 sig_type=std_logic lab=VSS}
+C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1020 -260 2 0 {name=x14 }
+C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 260 -430 1 0 {name=x13 }
