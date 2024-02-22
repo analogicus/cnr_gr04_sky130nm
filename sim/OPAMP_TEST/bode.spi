@@ -26,8 +26,10 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  dc 1.8
 
-VIN VIN VSS dc 0
-VIP VIP VSS dc 0.1
+VIN VIN VSS dc 0.9
+V_DIFF VIP VIN ac 1
+
+
 
 *-----------------------------------------------------------------
 * DUT
@@ -58,7 +60,8 @@ unset askquit
 optran 1 1 1 100p 20u 0
 
 
-tran 1n 20u 1n
+*tran 1n 20u 1n
+ac dec 20 1 1Meg
 write
 quit
 

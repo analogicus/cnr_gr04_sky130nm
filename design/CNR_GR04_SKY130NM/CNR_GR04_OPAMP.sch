@@ -203,7 +203,7 @@ C {devices/ipin.sym} 660 -330 0 0 {name=p3 lab=VIN}
 C {devices/ipin.sym} 940 -330 0 1 {name=p4 lab=VIP}
 C {devices/capa.sym} 1070 -260 3 0 {name=C1
 m=1
-value=1p
+value=0.1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/opin.sym} 1150 -380 0 0 {name=p5 lab=OPAMP_VOUT}

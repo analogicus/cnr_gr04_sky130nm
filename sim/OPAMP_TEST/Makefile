@@ -4,7 +4,7 @@ all: typical etc mc summary
 
 include ../../tech/make/sim.make
 
-TB=tran
+TB ?= tran
 VIEW=Sch
 #VIEW=Lay
 CELL=OPAMP_TEST
