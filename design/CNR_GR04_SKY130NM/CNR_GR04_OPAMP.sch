@@ -207,20 +207,20 @@ value=1p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/opin.sym} 1150 -380 0 0 {name=p5 lab=OPAMP_VOUT}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 680 -330 0 0 {name=x8 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 920 -330 0 1 {name=x9 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 680 -330 0 0 {name=x8 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 920 -330 0 1 {name=x9 }
 C {devices/vsource.sym} 1130 -320 0 0 {name=V_OPAMP_OUT value=0 savecurrent=false}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -280 0 1 {name=x2 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -190 0 1 {name=x3 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -190 0 0 {name=x4 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -280 0 0 {name=x5 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -280 0 1 {name=x2 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -190 0 1 {name=x3 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -190 0 0 {name=x4 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -280 0 0 {name=x5 }
 C {devices/vsource.sym} 420 -360 0 0 {name=V_IREF value=0 savecurrent=false}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 760 -220 0 1 {name=x12 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 840 -220 0 0 {name=x10 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 1090 -440 0 0 {name=x1 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 770 -440 0 0 {name=x6 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 460 -440 0 1 {name=x7 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1090 -210 0 0 {name=x11 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 760 -220 0 1 {name=x12 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 840 -220 0 0 {name=x10 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 1090 -440 0 0 {name=x1 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 770 -440 0 0 {name=x6 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 460 -440 0 1 {name=x7 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1090 -210 0 0 {name=x11 }
 C {devices/lab_pin.sym} 980 -300 0 0 {name=p6 sig_type=std_logic lab=VSS}
 C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1020 -260 2 0 {name=x14 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 260 -430 1 0 {name=x13 }

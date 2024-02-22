@@ -135,8 +135,8 @@ model=res_high_po
 spiceprefix=X
 mult=6}
 C {devices/lab_pin.sym} 1330 -370 0 0 {name=p6 sig_type=std_logic lab=VSS}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1010 -560 0 1 {name=x5 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1540 -560 0 0 {name=x1 }
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1320 -560 0 0 {name=x2 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1010 -560 0 1 {name=x5 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1540 -560 0 0 {name=x1 }
+C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1320 -560 0 0 {name=x2 }
 C {devices/lab_pin.sym} 1550 -330 0 0 {name=p7 sig_type=std_logic lab=VSS}
 C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 1580 -370 1 0 {name=x13 }
