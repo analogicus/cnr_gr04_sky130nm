@@ -46,6 +46,8 @@ summary:
 slide:
 	pandoc -s  -t slidy README.md -o README.html
 
+xdut:
+	perl ../../tech/script/genxdut ../../work/xsch/${CELL}.spice ${CELL}
 
 clean:
 	-rm -rf output_*

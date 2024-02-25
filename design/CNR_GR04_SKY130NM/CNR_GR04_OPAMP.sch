@@ -171,8 +171,6 @@ N 880 -260 940 -260 {
 lab=#net7}
 N 420 -410 420 -390 {
 lab=#net4}
-N 420 -330 420 -310 {
-lab=#net9}
 N 470 -440 470 -400 {
 lab=#net4}
 N 420 -400 470 -400 {
@@ -196,7 +194,15 @@ lab=VSS}
 N 980 -300 980 -280 {
 lab=VSS}
 N 1020 -260 1040 -260 {
-lab=#net10}
+lab=#net9}
+N 420 -330 450 -330 {
+lab=VSS}
+N 1150 -380 1300 -380 {
+lab=OPAMP_VOUT}
+N 1270 -290 1270 -250 {
+lab=VSS}
+N 1270 -380 1270 -350 {
+lab=OPAMP_VOUT}
 C {devices/ipin.sym} 260 -550 0 0 {name=p1 lab=VDD_1V8}
 C {devices/ipin.sym} 330 -70 0 0 {name=p2 lab=VSS}
 C {devices/ipin.sym} 660 -330 0 0 {name=p3 lab=VIN}
@@ -206,7 +212,7 @@ m=1
 value=0.1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/opin.sym} 1150 -380 0 0 {name=p5 lab=OPAMP_VOUT}
+C {devices/opin.sym} 1300 -380 0 0 {name=p5 lab=OPAMP_VOUT}
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 680 -330 0 0 {name=x8 }
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 920 -330 0 1 {name=x9 }
 C {devices/vsource.sym} 1130 -320 0 0 {name=V_OPAMP_OUT value=0 savecurrent=false}
@@ -214,7 +220,6 @@ C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 300 -190 0 1 {name=x3 }
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -190 0 0 {name=x4 }
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 380 -280 0 0 {name=x5 }
-C {devices/vsource.sym} 420 -360 0 0 {name=V_IREF value=0 savecurrent=false}
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 760 -220 0 1 {name=x12 }
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 840 -220 0 0 {name=x10 }
 C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym} 1090 -440 0 0 {name=x1 }
@@ -224,3 +229,11 @@ C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1090 
 C {devices/lab_pin.sym} 980 -300 0 0 {name=p6 sig_type=std_logic lab=VSS}
 C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1020 -260 2 0 {name=x14 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 260 -430 1 0 {name=x13 }
+C {devices/isource.sym} 420 -360 0 0 {name=I0 value=20u}
+C {devices/lab_pin.sym} 450 -330 0 1 {name=p7 sig_type=std_logic lab=VSS}
+C {devices/capa.sym} 1270 -320 0 0 {name=C2
+m=1
+value=10u
+footprint=1206
+device="ceramic capacitor"}
+C {devices/lab_pin.sym} 1270 -250 0 0 {name=p8 sig_type=std_logic lab=VSS}

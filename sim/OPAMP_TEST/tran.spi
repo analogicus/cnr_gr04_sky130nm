@@ -27,7 +27,7 @@ VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  dc 1.8
 
 VIN VIN VSS dc 0
-VIP VIP VSS dc 0.1
+VIP VIP VSS dc 1.8
 
 *-----------------------------------------------------------------
 * DUT
