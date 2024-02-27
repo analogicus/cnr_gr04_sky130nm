@@ -1,0 +1,16 @@
+out:
+  src:
+    - gain_10hz_-40
+    - gain_10hz_-20
+    - gain_10hz_0
+    - gain_10hz_20
+    - gain_10hz_40
+    - gain_10hz_80
+    - gain_10hz_125
+  typ: 50
+  name: Output gain
+  min: 45
+  max: 55
+  scale: 1
+  digits: 3
+  unit: V/V

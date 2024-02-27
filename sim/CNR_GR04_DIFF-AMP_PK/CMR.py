@@ -4,20 +4,10 @@ import cicsim as cs
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
-import os
-
-def get_data(filename):
-  if( not os.path.isfile(filename) ):
-    print("File not found")
-    return 0
-  
-  dfs = cs.toDataFrames(cs.ngRawRead(filename))
-  df = dfs[0]
-  print(df)
-
 
 def main(name):
   # Delete next line if you want to use python post processing
+  return 0
   print("Hello from python")
 
   yamlfile = name + ".yaml"
@@ -28,10 +18,10 @@ def main(name):
 
   # Do something to parameters
   temps = [-40, -20, 0, 20, 40, 80, 125]
+  print(obj)
+  param_name = "gain_10hz"
   for temp in temps:
-    print(get_data(f"{name}_{temp}"))
-
-
+    print(obj[f"{param_name}_{temp}"])
 
   # Save new yaml file
   with open(yamlfile,"w") as fo:

@@ -13,16 +13,9 @@ echo "MEAS_START"
 
 foreach vtemp -40 -20 0 20 40 80 125
     load {cicname}_$vtemp
+    echo {cicname}_$vtemp
     meas ac gain_dc_$vtemp find vdb(out) at=1
-
-    meas ac gm_db_$vtemp find vdb(out) when vp(out)=0
-    meas ac pm_deg_$vtemp find vp(out) when vdb(out)=0
-
 end
-
-*load {cicname}_20
-*meas ac gain vdb(out) from=1 to=1G
-*meas ac phase vp(out) from=1 to=1G
 
 echo "MEAS_END"
 .endc

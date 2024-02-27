@@ -43,7 +43,7 @@ V_IN    IN_P    IN_N    ac 1
 *----------------------------------------------------------------
 
 #ifdef Debug
-.save v(out) vdb(out) vp(out)
+.save all
 #else
 .save ${VPORTS} all
 #endif
@@ -61,7 +61,7 @@ set units = degrees
 optran 0 0 0 1n 20u 0
 
 #ifdef Debug
-*tran 10p 1n 1p
+tran 10p 1n 1p
 *quit
 #else
 *tran 10p 10n 1p
