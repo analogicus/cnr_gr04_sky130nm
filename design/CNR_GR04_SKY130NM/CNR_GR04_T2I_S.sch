@@ -59,25 +59,25 @@ N 1580 -560 1600 -560 {
 lab=VDD_1V8}
 N 1280 -170 1280 -130 {
 lab=VSS}
-N 510 -410 520 -410 {
+N 390 -410 400 -410 {
 lab=VDD_1V8}
-N 820 -410 830 -410 {
+N 700 -410 710 -410 {
 lab=OPAMP_O}
-N 510 -390 520 -390 {
+N 390 -390 400 -390 {
 lab=VIN}
-N 510 -370 520 -370 {
+N 390 -370 400 -370 {
 lab=VIP}
-N 510 -350 520 -350 {
+N 390 -350 400 -350 {
 lab=VSS}
 N 1580 -530 1580 -490 {
 lab=#net1}
-N 510 -610 510 -410 {
+N 390 -610 390 -410 {
 lab=VDD_1V8}
-N 510 -620 510 -610 {
+N 390 -620 390 -610 {
 lab=VDD_1V8}
 N 510 -620 970 -620 {
 lab=VDD_1V8}
-N 510 -350 510 -170 {
+N 390 -350 390 -170 {
 lab=VSS}
 N 510 -170 970 -170 {
 lab=VSS}
@@ -93,21 +93,50 @@ N 940 -600 940 -560 {
 lab=VDD_1V8}
 N 940 -600 970 -600 {
 lab=VDD_1V8}
-N 1360 -340 1360 -300 {
-lab=#net2}
+N 390 -620 510 -620 {
+lab=VDD_1V8}
+N 390 -170 510 -170 {
+lab=VSS}
 N 1360 -530 1360 -420 {
 lab=VIN}
-N 1580 -430 1580 -390 {
-lab=#net3}
-N 1360 -420 1360 -400 {
-lab=VIN}
-N 1580 -390 1580 -370 {
-lab=#net3}
-N 1330 -370 1340 -370 {
+N 1360 -340 1360 -300 {
+lab=#net2}
+N 1320 -380 1340 -380 {
 lab=VSS}
-N 1580 -290 1580 -170 {
+N 1740 -330 1760 -330 {
+lab=VDD_1V8}
+N 1740 -270 1760 -270 {
 lab=VSS}
-N 1550 -330 1560 -330 {}
+N 1580 -430 1580 -330 {
+lab=VCAP}
+N 1580 -270 1580 -170 {
+lab=VSS}
+N 1640 -360 1640 -310 {
+lab=VCAP}
+N 1580 -360 1640 -360 {
+lab=VCAP}
+N 1530 -270 1580 -270 {
+lab=VSS}
+N 1530 -300 1550 -300 {
+lab=VSS}
+N 1550 -300 1550 -270 {
+lab=VSS}
+N 1530 -330 1580 -330 {
+lab=VCAP}
+N 1470 -300 1490 -300 {
+lab=RESET}
+N 2060 -330 2080 -330 {
+lab=INTEGRATED}
+N 1550 -360 1580 -360 {
+lab=VCAP}
+N 1740 -290 1760 -290 {
+lab=VCAP}
+N 1740 -310 1760 -310 {
+lab=VCOMP}
+N 1640 -310 1640 -290 {
+lab=VCAP}
+N 1640 -290 1740 -290 {
+lab=VCAP}
 C {devices/ipin.sym} 1170 -650 0 0 {name=p1 lab=VDD_1V8}
 C {sky130_fd_pr/pnp_05v5.sym} 1340 -270 0 0 {name=Q1
 model=pnp_05v5_W3p40L3p40
@@ -116,27 +145,33 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pnp_05v5.sym} 990 -270 0 1 {name=Q2
 model=pnp_05v5_W3p40L3p40
-m=5
+m=2
 spiceprefix=X
 }
 C {devices/ipin.sym} 1280 -130 0 0 {name=p5 lab=VSS}
-C {CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym} 670 -380 0 0 {name=x4}
-C {devices/vsource.sym} 1580 -460 0 0 {name=V1 value=0 savecurrent=false}
-C {devices/lab_pin.sym} 510 -390 0 0 {name=p11 sig_type=std_logic lab=VIN}
+C {CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym} 550 -380 0 0 {name=x4}
+C {devices/vsource.sym} 1580 -460 0 0 {name=V_IOUT value=0 savecurrent=false}
+C {devices/lab_pin.sym} 390 -390 0 0 {name=p11 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} 1340 -460 0 0 {name=p3 sig_type=std_logic lab=VIN}
 C {devices/lab_pin.sym} 990 -460 0 1 {name=p8 sig_type=std_logic lab=VIP}
-C {devices/lab_pin.sym} 510 -370 0 0 {name=p4 sig_type=std_logic lab=VIP}
-C {devices/lab_pin.sym} 830 -410 0 1 {name=p9 sig_type=std_logic lab=OPAMP_O}
+C {devices/lab_pin.sym} 390 -370 0 0 {name=p4 sig_type=std_logic lab=VIP}
+C {devices/lab_pin.sym} 710 -410 0 1 {name=p9 sig_type=std_logic lab=OPAMP_O}
 C {devices/lab_pin.sym} 1170 -520 0 0 {name=p2 sig_type=std_logic lab=OPAMP_O}
-C {sky130_fd_pr/res_high_po.sym} 1360 -370 0 0 {name=R3
-W=0.72
-L=8.8
-model=res_high_po
-spiceprefix=X
-mult=6}
-C {devices/lab_pin.sym} 1330 -370 0 0 {name=p6 sig_type=std_logic lab=VSS}
-C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1010 -560 0 1 {name=x5 }
-C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1540 -560 0 0 {name=x1 }
-C {../../../cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 1320 -560 0 0 {name=x2 }
-C {devices/lab_pin.sym} 1550 -330 0 0 {name=p7 sig_type=std_logic lab=VSS}
-C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 1580 -370 1 0 {name=x13 }
+C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1360 -420 1 0 {name=x13 }
+C {devices/lab_pin.sym} 1320 -380 0 0 {name=p6 sig_type=std_logic lab=VSS}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C12F0.sym} 1320 -560 0 0 {name=x3 }
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C12F0.sym} 1010 -560 0 1 {name=x1 }
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C12F0.sym} 1540 -560 0 0 {name=x2 }
+C {CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym} 1910 -300 0 0 {name=x5}
+C {devices/lab_pin.sym} 1740 -270 0 0 {name=p7 sig_type=std_logic lab=VSS}
+C {devices/lab_pin.sym} 1740 -330 0 0 {name=p10 sig_type=std_logic lab=VDD_1V8}
+C {devices/capa.sym} 1580 -300 0 0 {name=C1
+m=1
+value=0.1p
+footprint=1206
+device="ceramic capacitor"}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C4F0.sym} 1490 -300 0 0 {name=x6 }
+C {devices/ipin.sym} 1470 -300 0 0 {name=p12 lab=RESET}
+C {devices/opin.sym} 2080 -330 0 0 {name=p13 lab=INTEGRATED}
+C {devices/lab_pin.sym} 1550 -360 0 0 {name=p14 sig_type=std_logic lab=VCAP}
+C {devices/ipin.sym} 1740 -310 0 0 {name=p15 lab=VCOMP}

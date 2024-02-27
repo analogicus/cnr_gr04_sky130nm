@@ -24,10 +24,12 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  dc 1.8
+VDD  VDD_1V8  0  dc 1.8
 
 VIN VIN VSS dc 0
-VIP VIP VSS dc 1.8
+VIP VIP VSS dc 1
+
+*VRESET RESET 0 pulse 0 1.8 0 2ns 2ns 10ns 50ns
 
 *-----------------------------------------------------------------
 * DUT
@@ -58,7 +60,7 @@ unset askquit
 optran 1 1 1 100p 20u 0
 
 
-tran 1n 20u 1n
+tran 100p 200n 1p
 write
 quit
 
