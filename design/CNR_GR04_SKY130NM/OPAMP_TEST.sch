@@ -19,5 +19,5 @@ C {devices/ipin.sym} 490 -460 0 0 {name=p2 lab=VDD_1V8}
 C {devices/ipin.sym} 490 -440 0 0 {name=p3 lab=VIN}
 C {devices/ipin.sym} 490 -420 0 0 {name=p4 lab=VIP}
 C {devices/ipin.sym} 490 -400 0 0 {name=p5 lab=VSS}
-C {CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym} 650 -430 0 0 {name=x1}
 C {devices/opin.sym} 820 -460 0 0 {name=p1 lab=OPAMP_VOUT}
+C {CNR_GR04_SKY130NM/CNR_GR04_SSOPAMP.sym} 650 -430 0 0 {name=x1}
