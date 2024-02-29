@@ -1,18 +1,43 @@
 #!/usr/bin/env python3
 import pandas as pd
 import yaml
+import ltspice 
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+import os
+import csv
 
-def main(name):
+ 
+
+def main():
   # Delete next line if you want to use python post processing
-  return
-  yamlfile = name + ".yaml"
+  
+  path = "C:\\Users\\Leidu\\AppData\\Local\\Temp\\Mxt236\\RemoteFiles\\133562_3_46\\tran_SchGtKffThVh"
+  
+ 
 
-  # Read result yaml file
-  with open(yamlfile) as fi:
-    obj = yaml.safe_load(fi)
+  filepath = path+ '.raw'
+  l = ltspice.Ltspice(filepath)
+  l.parse()
 
-  # Do something to parameters
+  TEMP = l.get_data("temp-sweep")
+  I_OUT = l.get_data("I(VOUT)")
+  print(I_OUT)
+  
+  file_name = "MC_ETC.csv"
+  
+  
+  with open(file_name, 'a', newline='') as csvfile:
+      csv_writer = csv.writer(csvfile)
+      csv_writer.writerow(I_OUT)
 
-  # Save new yaml file
-  with open(yamlfile,"w") as fo:
-    yaml.dump(obj,fo)
+   
+    
+  
+    
+  
+  
+
+
+main()
