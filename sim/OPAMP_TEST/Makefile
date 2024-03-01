@@ -4,10 +4,10 @@ all: typical etc mc summary
 
 include ../../tech/make/sim.make
 
-TB=tran
+TB ?= tran
 VIEW=Sch
 #VIEW=Lay
-CELL=CNR_GR04
+CELL=OPAMP_TEST
 LIB =CNR_GR04_SKY130NM
 OPT=
 
@@ -46,6 +46,8 @@ summary:
 slide:
 	pandoc -s  -t slidy README.md -o README.html
 
+xdut:
+	perl ../../tech/script/genxdut ../../work/xsch/${CELL}.spice ${CELL}
 
 clean:
 	-rm -rf output_*

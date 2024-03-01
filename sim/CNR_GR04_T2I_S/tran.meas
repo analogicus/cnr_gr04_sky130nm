@@ -1,4 +1,4 @@
-* Measure CNR_GR04
+* Measure CNR_GR04_T2I_S
 .control
 
 load {cicname}.raw

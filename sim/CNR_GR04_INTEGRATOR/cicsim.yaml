@@ -3,4 +3,4 @@ corner:
   Sch: ''
 ngspice:
   library: CNR_GR04_SKY130NM
-  cell: CNR_GR04
+  cell: CNR_GR04_INTEGRATOR

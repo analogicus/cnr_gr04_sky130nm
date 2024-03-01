@@ -1,4 +1,4 @@
-* Measure CNR_GR04
+* Measure OPAMP_TEST
 .control
 
 load {cicname}.raw
