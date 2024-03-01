@@ -5,13 +5,5 @@ load {cicname}.raw
 
 echo "MEAS_START"
 
-    meas tran I_OUT find i(VOUT) at=5ns
-    meas tran I_IN find i(VDD) at=5ns 
-    meas tran I_OUT_T40 find i(VOUT) at=-40
-
-    meas tran I_in_40 find i(VDD) at=-40
-    meas tran I_in_27 find i(VDD) at=27
-    meas tran I_in_125 find i(VDD) at=125
-
 echo "MEAS_END"
 .endc

@@ -26,8 +26,8 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  0  dc 1.8
 
-VIN VIN VSS dc 0
-VIP VIP VSS dc 1
+VIN VIN VSS dc 0.1
+VIP VIP VSS dc 0
 
 *VRESET RESET 0 pulse 0 1.8 0 2ns 2ns 10ns 50ns
 
@@ -57,7 +57,7 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 1 1 1 100p 20u 0
+*optran 1 1 1 100p 20u 0
 
 
 tran 100p 200n 1p
