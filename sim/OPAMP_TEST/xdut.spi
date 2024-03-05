@@ -1,2 +1,2 @@
 *Automatic generated instance fron ../../tech/scripts/genxdut OPAMP_TEST
-XDUT VDD_1V8 VIN VIP VSS OPAMP_VOUT  OPAMP_TEST
+XDUT  OPAMP_TEST
