@@ -3,15 +3,15 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/CNR_GR04_lpe.spi
+.include ../../../work/lpe/CNR_GR04_T2I_S_lpe.spi
 #else
-.include ../../../work/xsch/CNR_GR04.spice
+.include ../../../work/xsch/CNR_GR04_T2I_S.spice
 #endif
 
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
-.option TNOM=27 GMIN=1e-15 reltol=1e-3
+.option TNOM=27 GMIN=1e-15
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -26,7 +26,7 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  dc 1.8
 
-VRESET RESET VSS pulse 1.8 0 0 2ns 2ns 40ns 100ns
+VRESET RESET 0 pulse 0 1.8 0 0 0 20ns 500ns
 
 *-----------------------------------------------------------------
 * DUT
@@ -40,10 +40,15 @@ VRESET RESET VSS pulse 1.8 0 0 2ns 2ns 40ns 100ns
 .save all
 
 *----------------------------------------------------------------
+
 * PROBE
 *----------------------------------------------------------------
-.save all
 
+#ifdef Debug
+.save all
+#else
+.save ${VPORTS}
+#endif
 
 *----------------------------------------------------------------
 * NGSPICE control
@@ -60,9 +65,8 @@ optran 1 1 1 100p 20u 0
 tran 10p 1n 1p
 *quit
 #else
-
-tran 1n 400n 1n
-*dc TEMP -40 125 2
+tran 100p 1000n 1p
+*dc TEMP -40 125 1
 write
 quit
 #endif
