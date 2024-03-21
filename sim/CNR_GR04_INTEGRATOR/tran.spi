@@ -3,9 +3,9 @@
 * Include
 *----------------------------------------------------------------
 #ifdef Lay
-.include ../../../work/lpe/CNR_GR04_INTEGRATOR_lpe.spi
+.include ../../../work/lpe/CNR_GR04_lpe.spi
 #else
-.include ../../../work/xsch/CNR_GR04_INTEGRATOR.spice
+.include ../../../work/xsch/CNR_GR04.spice
 #endif
 
 *-----------------------------------------------------------------
@@ -24,7 +24,9 @@
 * FORCE
 *-----------------------------------------------------------------
 VSS  VSS  0     dc 0
-VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
+VDD  VDD_1V8  VSS  dc 1.8
+
+*VRESET RESET VSS pulse 1.8 0 0 2ns 2ns 40ns 100ns
 
 *-----------------------------------------------------------------
 * DUT
@@ -35,6 +37,7 @@ VDD  VDD_1V8  VSS  pwl 0 0 10n {AVDD}
 * MEASURES
 *----------------------------------------------------------------
 
+.save all
 
 *----------------------------------------------------------------
 * PROBE
@@ -51,13 +54,18 @@ set color0=white
 set color1=black
 unset askquit
 
-optran 0 0 0 1n 1u 0
+optran 1 1 1 100p 20u 0
 
+#ifdef Debug
+tran 10p 1n 1p
+*quit
+#else
 
-tran 1n 10n 1p
+tran 1n 400n 1n
+*dc TEMP -40 125 2
 write
 quit
-
+#endif
 
 .endc
 

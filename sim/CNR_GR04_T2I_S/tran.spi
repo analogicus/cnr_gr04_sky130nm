@@ -26,7 +26,7 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  dc 1.8
 
-VRESET RESET 0 pulse 0 1.8 0 0 0 20ns 500ns
+VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
 
 *-----------------------------------------------------------------
 * DUT
@@ -65,7 +65,7 @@ optran 1 1 1 100p 20u 0
 tran 10p 1n 1p
 *quit
 #else
-tran 100p 1000n 1p
+tran 100p 3u 1p
 *dc TEMP -40 125 1
 write
 quit

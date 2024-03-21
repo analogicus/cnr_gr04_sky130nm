@@ -7,33 +7,70 @@ S {}
 E {}
 N 760 -250 810 -250 {
 lab=V_OUT_INTEGRATOR}
-N 310 -210 460 -210 {
-lab=I_IN}
-N 120 -210 240 -210 {
-lab=I_IN}
-N 120 -150 240 -150 {
+N 430 -250 460 -250 {
+lab=VDD_1V8}
+N 430 -230 460 -230 {
+lab=#net1}
+N 430 -190 460 -190 {
+lab=#net2}
+N 220 -50 220 -30 {
 lab=VSS}
-N 190 -150 190 -100 {
-lab=VSS}
-N 240 -210 310 -210 {
-lab=I_IN}
-N 70 -210 120 -210 {
-lab=I_IN}
-N 120 -180 150 -180 {
-lab=VSS}
-N 150 -180 150 -150 {
-lab=VSS}
-N 810 -210 810 -170 {}
-N 790 -170 810 -170 {}
-C {CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym} 610 -220 0 0 {name=x1}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 240 -180 0 0 {name=C1 model=cap_mim_m3_2 W=10 L=10 MF=10 spiceprefix=X}
-C {devices/ipin.sym} 460 -230 0 0 {name=p1 lab=VREF}
-C {devices/ipin.sym} 460 -190 0 0 {name=p3 lab=VSS}
+N 340 -230 430 -230 {
+lab=#net1}
+N 450 -210 460 -210 {
+lab=#net3}
+N 220 -130 220 -110 {
+lab=#net1}
+N 220 -230 220 -190 {
+lab=#net1}
+N 220 -230 340 -230 {
+lab=#net1}
+N 220 -320 220 -230 {
+lab=#net1}
+N 220 -320 580 -320 {
+lab=#net1}
+N 520 -410 580 -410 {
+lab=#net1}
+N 520 -410 520 -320 {
+lab=#net1}
+N 640 -320 780 -320 {
+lab=V_OUT_INTEGRATOR}
+N 780 -320 780 -250 {
+lab=V_OUT_INTEGRATOR}
+N 640 -410 700 -410 {
+lab=V_OUT_INTEGRATOR}
+N 700 -410 700 -320 {
+lab=V_OUT_INTEGRATOR}
+N 640 -510 700 -510 {
+lab=V_OUT_INTEGRATOR}
+N 700 -510 700 -410 {
+lab=V_OUT_INTEGRATOR}
+N 520 -510 580 -510 {
+lab=#net1}
+N 520 -510 520 -410 {
+lab=#net1}
+N 550 -580 610 -580 {
+lab=RESET}
+N 610 -580 610 -550 {
+lab=RESET}
+N 220 -190 220 -130 {
+lab=#net1}
+N 450 -210 450 -190 {}
+C {devices/ipin.sym} 430 -190 0 0 {name=p3 lab=VSS}
 C {devices/opin.sym} 810 -250 0 0 {name=p2 lab=V_OUT_INTEGRATOR}
-C {/home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym} 80 -180 0 0 {name=x2 }
-C {devices/lab_pin.sym} 190 -100 0 0 {name=p4 sig_type=std_logic lab=VSS}
-C {devices/ipin.sym} 80 -180 0 0 {name=p5 lab=RESET}
-C {devices/ipin.sym} 70 -210 0 0 {name=p6 lab=I_IN}
-C {devices/ipin.sym} 460 -250 0 0 {name=p7 lab=VDD_1V8}
-C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 790 -170 3 0 {name=x14 }
-C {devices/lab_pin.sym} 790 -170 0 0 {name=p8 sig_type=std_logic lab=VSS}
+C {devices/ipin.sym} 430 -250 0 0 {name=p7 lab=VDD_1V8}
+C {devices/isource.sym} 220 -80 2 0 {name=I0 value=5u}
+C {devices/lab_pin.sym} 220 -30 0 0 {name=p1 sig_type=std_logic lab=VSS}
+C {devices/capa.sym} 610 -320 3 0 {name=C1
+m=1
+value=10p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/res.sym} 610 -410 3 0 {name=R1
+value=5k
+footprint=1206
+device=resistor
+m=1}
+C {CNR_GR04_SKY130NM/CNR_GR04_SSOPAMP.sym} 610 -220 0 0 {name=x1}
+C {CNR_ATR_SKY130NM/CNRATR_NCH_4C4F0.sym} 610 -550 1 0 {name=x2 }
+C {devices/ipin.sym} 550 -580 0 0 {name=p4 lab=RESET}

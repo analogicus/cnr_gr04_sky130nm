@@ -40,4 +40,6 @@ def main():
   
 
 
-main()
+  # Save new yaml file
+  with open(yamlfile,"w") as fo:
+    yaml.dump(obj,fo)
