@@ -16,6 +16,9 @@
 *Inputs
 .param RESET_START = 2*PERIOD
 .param START = 4*PERIOD
+.param DATA_HALF_PERIOD = 10*PERIOD
+.param DATA_PERIOD = 20*PERIOD
+
 
 VDD     VDD_1V8    VSS  dc   1.8
 VSS     VSS        0    dc     0
@@ -24,17 +27,19 @@ VSS     VSS        0    dc     0
 VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
 VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
 VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
+VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
 
 
-XDUT CLK RST data_in START ready running d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+XDUT CLK RST data_in START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
 
 .control
 
 save all
-tran 1n 1u 1n
+tran 1n 10u 1n
 
-plot V(CLK) V(RST) V(START)
-plot V(ready) V(running)
+plot V(CLK)
+plot V(RST) V(START) V(data_in)
+plot V(ready) V(running) V(temp_reset)
 .endc
 .end
 

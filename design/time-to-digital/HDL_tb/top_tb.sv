@@ -1,12 +1,12 @@
 module top_tb;
     reg logic clk=0, rst=0, data_in=0, start=0;
     wire logic [7:0] count_out;
-    wire logic ready, running;
+    wire logic ready, running, temp_reset;
         
-    top dut(.clk(clk), .rst(rst),.start(start), .data_in(data_in), .count_out(count_out), .ready(ready), .running(running));
+    top dut(.clk(clk), .rst(rst),.start(start), .data_in(data_in), .count_out(count_out), .ready(ready), .running(running), .temp_reset(temp_reset));
     //
 
-    always #5 clk  = ~clk;
+    always #1 clk  = ~clk;
 
     initial begin
         clk = 0;

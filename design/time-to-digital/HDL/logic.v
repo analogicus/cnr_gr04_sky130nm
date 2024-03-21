@@ -89,21 +89,54 @@ module debounce
     assign data_out = (debounce_buffer == {DEBOUNCE_BITS{1'b1}});  
 endmodule
 
-module edge_detector(
+module edge_detector
+#(  parameter RESET_COUNTER_BITS = 2)(
     input reg clk, rst, data_in,
-    output wire data_out
+    output wire data_out, temp_reset
 );
+    localparam WIDTH = RESET_COUNTER_BITS -1;
+
+    localparam IDLE = 2'b00;
+    localparam EDGE_DETECTED = 2'b01;
+    localparam RESET = 2'b10;
+
+    reg [1:0] state;
     reg [1:0] input_buffer;
+    reg [WIDTH:0] reset_counter;
 
     always @(posedge clk or posedge rst) begin
         if (rst==1'b1) begin
             input_buffer <= 2'b00;
+            reset_counter <= {RESET_COUNTER_BITS{1'b0}};
+            state <= IDLE;
         end else begin
-            input_buffer <= {input_buffer[0], data_in};
+            state <= state;
+            reset_counter <= reset_counter;
+            case(state)
+            IDLE: begin
+                input_buffer <= {input_buffer[0], data_in};
+                reset_counter <= {RESET_COUNTER_BITS{1'b0}};
+                if(input_buffer == 2'b01) begin
+                    state <= EDGE_DETECTED;
+                end
+            end
+            EDGE_DETECTED: begin
+                state <= RESET;
+            end
+            RESET: begin
+                if(reset_counter == {RESET_COUNTER_BITS{1'b1}}) begin
+                    state <= IDLE;
+                end else begin
+                    reset_counter <= reset_counter + 1;
+                end
+            end
+            default: state <= IDLE;
+            endcase
         end
         
     end
-    assign data_out = (input_buffer == 2'b01);
+    assign temp_reset = (state == RESET);
+    assign data_out = (state == EDGE_DETECTED);
 endmodule
 
 module counter
