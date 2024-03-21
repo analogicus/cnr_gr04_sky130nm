@@ -1,0 +1,40 @@
+* Title: dff_tb.cir
+.include "top.cir"  
+
+*CLK Control
+.param CLK_FREQ = 20MEG
+.param PERIOD = 1/CLK_FREQ
+.param HALF_PERIOD = PERIOD/2
+
+*Simulation Control
+
+.param SIM_STEP = 1n
+.param SIM_START = 1n
+.param SIM_STOP = 100*PERIOD
+
+
+*Inputs
+.param RESET_START = 2*PERIOD
+.param START = 4*PERIOD
+
+VDD     VDD_1V8    VSS  dc   1.8
+VSS     VSS        0    dc     0
+
+
+VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
+VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
+VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
+
+
+XDUT CLK RST data_in START ready running d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+
+.control
+
+save all
+tran 1n 1u 1n
+
+plot V(CLK) V(RST) V(START)
+plot V(ready) V(running)
+.endc
+.end
+
