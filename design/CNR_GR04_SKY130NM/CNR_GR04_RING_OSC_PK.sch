@@ -104,10 +104,10 @@ C {SUN_TR_SKY130NM/SUNTR_IVX1_CV.sym} 640 60 0 0 {name=x3 }
 C {sky130_fd_pr/cap_mim_m3_2.sym} 300 90 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 540 90 0 0 {name=C2 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_2.sym} 780 90 0 0 {name=C3 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
-C {CNR_ATR_SKY130NM/CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 160 -90 0 0 {name=x4 }
-C {CNR_ATR_SKY130NM/CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 400 -90 0 0 {name=x5 }
-C {CNR_ATR_SKY130NM/CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 640 -90 0 0 {name=x6 }
-C {CNR_ATR_SKY130NM/CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 0 -90 0 1 {name=x7 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 160 -90 0 0 {name=x4 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 400 -90 0 0 {name=x5 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 640 -90 0 0 {name=x6 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 0 -90 0 1 {name=x7 }
 C {devices/lab_pin.sym} 200 160 0 0 {name=p4 sig_type=std_logic lab=VSS
 }
 C {devices/lab_pin.sym} 200 -160 0 0 {name=p5 sig_type=std_logic lab=VDD_1V8}
