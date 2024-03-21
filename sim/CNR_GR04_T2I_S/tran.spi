@@ -6,6 +6,7 @@
 .include ../../../work/lpe/CNR_GR04_T2I_S_lpe.spi
 #else
 .include ../../../work/xsch/CNR_GR04_T2I_S.spice
+.include ../../../work/xsch/top.cir
 #endif
 
 *-----------------------------------------------------------------
@@ -17,8 +18,24 @@
 * PARAMETERS
 *-----------------------------------------------------------------
 .param TRF = 10p
-
 .param AVDD = {vdda}
+
+*Controller CLK
+.param CLK_FREQ = 20MEG
+.param PERIOD = 1/CLK_FREQ
+.param HALF_PERIOD = PERIOD/2
+
+*Simulation Control
+.param SIM_STEP = 1n
+.param SIM_START = 1n
+.param SIM_STOP = 100*PERIOD
+
+
+*Inputs
+.param RESET_START = 2*PERIOD
+.param START = 4*PERIOD
+.param DATA_HALF_PERIOD = 10*PERIOD
+.param DATA_PERIOD = 20*PERIOD
 
 *-----------------------------------------------------------------
 * FORCE
@@ -28,11 +45,19 @@ VDD  VDD_1V8  VSS  dc 1.8
 
 VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
 
+VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
+VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
+VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
+VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
+
+
+
+
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
-
+XU1 CLK RST data_in START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
 *----------------------------------------------------------------
 * MEASURES
 *----------------------------------------------------------------
@@ -68,7 +93,14 @@ tran 10p 1n 1p
 tran 100p 3u 1p
 *dc TEMP -40 125 1
 write
-quit
+
+*Controlller input
+plot V(RST) V(START) V(data_in)
+
+*Controller output
+plot V(ready) V(running) V(temp_reset)
+
+plot V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
 #endif
 
 .endc
