@@ -1,0 +1,96 @@
+** sch_path: /home/local/syverhar/pro/aicex/ip/cnr_gr04_sky130nm/design/CNR_GR04_SKY130NM/CNR_GR04_T2I_S.sch
+**.subckt CNR_GR04_T2I_S VDD_1V8 VSS
+*.ipin VDD_1V8
+*.ipin VSS
+XQ1 VSS VSS net2 sky130_fd_pr__pnp_05v5_W3p40L3p40 m=6
+XQ2 VSS VSS VIP sky130_fd_pr__pnp_05v5_W3p40L3p40 m=5
+x4 VDD_1V8 OPAMP_O VIN VIP VSS CNR_GR04_OPAMP
+V1 net1 net3 0
+x1 VIP OPAMP_O VDD_1V8 VDD_1V8 CNRATR_PCH_4C2F0
+x3 VIN OPAMP_O VDD_1V8 VDD_1V8 CNRATR_PCH_4C2F0
+x2 net1 OPAMP_O VDD_1V8 VDD_1V8 CNRATR_PCH_4C2F0
+R2 net3 VSS 10k m=1
+XR3 net2 VIN VSS sky130_fd_pr__res_high_po W=0.72 L=8.8 mult=6 m=6
+**** begin user architecture code
+
+
+* ngspice commands
+.include corner.spi
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym # of pins=5
+** sym_path: /home/local/syverhar/pro/aicex/ip/cnr_gr04_sky130nm/design/CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sym
+** sch_path: /home/local/syverhar/pro/aicex/ip/cnr_gr04_sky130nm/design/CNR_GR04_SKY130NM/CNR_GR04_OPAMP.sch
+.subckt CNR_GR04_OPAMP VDD_1V8 OPAMP_VOUT VIN VIP VSS
+*.ipin VDD_1V8
+*.ipin VSS
+*.ipin VIN
+*.ipin VIP
+*.opin OPAMP_VOUT
+x11 net6 net6 VSS VSS CNRATR_NCH_4C2F0
+x12 net7 net6 VSS VSS CNRATR_NCH_4C2F0
+x13 net9 net7 VSS VSS CNRATR_NCH_4C2F0
+C1 net8 net9 10u m=1
+x1 net4 net4 VDD_1V8 VDD_1V8 CNRATR_PCH_12C2F0
+x6 net5 net4 VDD_1V8 VDD_1V8 CNRATR_PCH_12C2F0
+x7 OPAMP_VOUT net4 VDD_1V8 VDD_1V8 CNRATR_PCH_12C2F0
+x8 net6 VIN net5 net5 CNRATR_PCH_12C2F0
+x9 net7 VIP net5 net5 CNRATR_PCH_12C2F0
+V_OPAMP_OUT OPAMP_VOUT net9 0
+x2 net3 net1 net4 net3 CNRATR_PCH_12C2F0
+x3 net2 net1 net1 net2 CNRATR_PCH_12C2F0
+x4 VSS net2 net2 VSS CNRATR_PCH_12C2F0
+x5 VSS net2 net3 VSS CNRATR_PCH_12C2F0
+R1 net7 net8 1k m=1
+R2 VDD_1V8 net1 90k m=1
+.ends
+
+
+* expanding   symbol:
+*+  /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym # of pins=4
+** sym_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym
+** sch_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sch
+.subckt CNRATR_PCH_4C2F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.54 W=3.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:
+*+  /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym # of pins=4
+** sym_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sym
+** sch_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_NCH_4C2F0.sch
+.subckt CNRATR_NCH_4C2F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__nfet_01v8 L=0.54 W=3.84 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:
+*+  /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym # of pins=4
+** sym_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sym
+** sch_path: /home/local/syverhar/pro/aicex/ip/cnr_atr_sky130nm/design/CNR_ATR_SKY130NM/CNRATR_PCH_12C2F0.sch
+.subckt CNRATR_PCH_12C2F0 D G S B
+*.iopin D
+*.iopin G
+*.iopin S
+*.iopin B
+XM1 D G S B sky130_fd_pr__pfet_01v8 L=0.54 W=11.52 nf=2 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end
