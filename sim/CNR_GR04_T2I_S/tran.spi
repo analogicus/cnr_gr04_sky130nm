@@ -28,7 +28,7 @@
 *Simulation Control
 .param SIM_STEP = 1n
 .param SIM_START = 1n
-.param SIM_STOP = 100*PERIOD
+.param SIM_STOP = 1000*PERIOD
 
 
 *Inputs
@@ -43,12 +43,14 @@
 VSS  VSS  0     dc 0
 VDD  VDD_1V8  VSS  dc 1.8
 
-VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
+*VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
+
+R_TEMP RESET temp_reset 1k
 
 VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
 VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
 VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
-VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
+*VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
 
 
 
@@ -57,12 +59,25 @@ VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
-XU1 CLK RST data_in START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+XU1 CLK_OUT RST COMPERATOR START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+
+
+R0 d0 VSS 1k
+R1 d1 VSS 1k
+R2 d2 VSS 1k
+R3 d3 VSS 1k
+R4 d4 VSS 1k
+R5 d5 VSS 1k
+R6 d6 VSS 1k
+R7 d7 VSS 1k
+
+
 *----------------------------------------------------------------
 * MEASURES
 *----------------------------------------------------------------
 
 .save all
+.save V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
 
 *----------------------------------------------------------------
 
@@ -90,19 +105,19 @@ optran 1 1 1 100p 20u 0
 tran 10p 1n 1p
 *quit
 #else
-tran 100p 3u 1p
+tran 100p 20u 1p
 *dc TEMP -40 125 1
 write
 
+plot V(CLK_OUT)
+
 *Controlller input
-plot V(RST) V(START) V(data_in)
+plot V(RST) V(START) V(COMPERATOR)
 
 *Controller output
 plot V(ready) V(running) V(temp_reset)
 
 plot V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
 #endif
-
 .endc
-
 .end

@@ -11,7 +11,7 @@ wire synched_data_in;
 wire debounced_data_in;
 wire edge_detected;
 
-controller      #(12)  controller_inst           (.clk(clk), .rst(rst), .start(start), .ready(ready), .clear(clear), .running(running));
+controller      #(8)  controller_inst           (.clk(clk), .rst(rst), .start(start), .ready(ready), .clear(clear), .running(running));
 
 
 // Data path

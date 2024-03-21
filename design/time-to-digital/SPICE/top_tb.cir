@@ -10,7 +10,7 @@
 
 .param SIM_STEP = 1n
 .param SIM_START = 1n
-.param SIM_STOP = 100*PERIOD
+.param SIM_STOP = 500*PERIOD
 
 
 *Inputs
@@ -35,11 +35,13 @@ XDUT CLK RST data_in START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_
 .control
 
 save all
-tran 1n 10u 1n
+tran 1n 20u 1n
 
 plot V(CLK)
 plot V(RST) V(START) V(data_in)
 plot V(ready) V(running) V(temp_reset)
+
+
 .endc
 .end
 

@@ -156,7 +156,7 @@ module counter
             if (clear) begin
                 counter <= {COUNTER_BITS{1'b0}};
             end else if (en==1 && inc==1) begin
-                counter <= counter + 1;
+                counter <= counter - 1;
             end
         end
         

@@ -171,6 +171,7 @@ N 1720 -860 1760 -860 {
 lab=VDD_1V8}
 N 1820 -860 1860 -860 {
 lab=#net3}
+N 1790 -150 1920 -150 {}
 C {devices/ipin.sym} 1170 -710 0 0 {name=p1 lab=VDD_1V8}
 C {sky130_fd_pr/pnp_05v5.sym} 1340 -270 0 0 {name=Q1
 model=pnp_05v5_W3p40L3p40
@@ -224,4 +225,4 @@ C {CNR_ATR_SKY130NM/CNRATR_PCH_2C12F0.sym} 1480 -560 0 0 {name=x2 }
 C {CNR_GR04_SKY130NM/CNR_GR04_RING_OSC_PK.sym} 1640 -140 0 0 {name=x13}
 C {devices/lab_pin.sym} 1490 -150 0 0 {name=p7 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_pin.sym} 1490 -130 0 0 {name=p10 sig_type=std_logic lab=VSS}
-C {devices/lab_pin.sym} 1790 -150 0 1 {name=p17 sig_type=std_logic lab=CLK_OUT}
+C {devices/opin.sym} 1920 -150 0 0 {name=p27 lab=CLK_OUT}

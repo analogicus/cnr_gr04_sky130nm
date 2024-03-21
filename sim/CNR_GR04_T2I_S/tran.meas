@@ -1,9 +1,19 @@
 * Measure CNR_GR04_T2I_S
 .control
+param MEAS_TIME 19u
 
 load {cicname}.raw
 
 echo "MEAS_START"
+
+meas dc data_out0 FIND v(d0) WHEN time=19u
+meas dc data_out1 FIND v(d1) WHEN time=19u
+meas dc data_out2 FIND v(d2) WHEN time=19u
+meas dc data_out3 FIND v(d3) WHEN time=19u
+meas dc data_out4 FIND v(d4) WHEN time=19u
+meas dc data_out5 FIND v(d5) WHEN time=19u
+meas dc data_out6 FIND v(d6) WHEN time=19u
+meas dc data_out7 FIND v(d7) WHEN time=19u
 
 echo "MEAS_END"
 .endc
