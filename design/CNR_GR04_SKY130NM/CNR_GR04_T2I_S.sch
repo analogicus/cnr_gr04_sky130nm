@@ -194,7 +194,7 @@ C {devices/ipin.sym} 1770 -410 0 1 {name=p12 lab=RESET}
 C {devices/lab_pin.sym} 1560 -470 0 1 {name=p14 sig_type=std_logic lab=VCAP}
 C {devices/vsource.sym} 1360 -480 0 0 {name=V_I value=0 savecurrent=false}
 C {devices/lab_pin.sym} 1520 -270 0 0 {name=p13 sig_type=std_logic lab=VSS}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 1520 -410 0 0 {name=C1 model=cap_mim_m3_2 W=10 L=10 MF=2 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 1520 -410 0 0 {name=C1 model=cap_mim_m3_2 W=15 L=15 MF=2 spiceprefix=X}
 C {devices/lab_pin.sym} 1320 -380 3 0 {name=p15 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 1990 -740 0 0 {name=p18 sig_type=std_logic lab=VCAP}
 C {devices/lab_pin.sym} 1990 -780 0 0 {name=p21 sig_type=std_logic lab=VDD_1V8}
@@ -217,7 +217,7 @@ C {CNR_ATR_SKY130NM/CNRATR_PCH_4C4F0.sym} 1010 -560 0 1 {name=x5 }
 C {CNR_ATR_SKY130NM/CNRATR_PCH_4C4F0.sym} 1320 -560 0 0 {name=x1 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1380 -420 1 0 {name=x3 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1400 -420 1 0 {name=x9 }
-C {CNR_ATR_SKY130NM/CNRATR_PCH_4C2F0.sym} 1480 -560 0 0 {name=x2 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 1860 -840 1 0 {name=x12 }
 C {devices/vsource.sym} 1170 -670 0 0 {name=V_ITOT1 value=0 savecurrent=false}
 C {devices/vsource.sym} 1790 -860 3 0 {name=V_ITOT2 value=0 savecurrent=false}
+C {CNR_ATR_SKY130NM/CNRATR_PCH_2C12F0.sym} 1480 -560 0 0 {name=x2 }
