@@ -12,8 +12,8 @@
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
-.option TNOM=27 GMIN=1e-15
-.option TEMP=0
+.option TNOM=60 GMIN=1e-15
+.option TEMP=120
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -29,7 +29,7 @@
 *Simulation Control
 .param SIM_STEP = 1n
 .param SIM_START = 1n
-.param SIM_STOP = 10000*PERIOD
+.param SIM_STOP = 100000000000*PERIOD
 
 
 *Inputs
@@ -46,12 +46,12 @@ VDD  VDD_1V8  VSS  dc 1.8
 
 *VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
 
-R_TEMP RESET temp_reset 1k
+R_reset RESET temp_reset 0
 
 VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
 VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
 VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
-*VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
+*VDATA   data_in VSS   PULSE(0 1.8 0          0 0 DATA_HALF_PERIOD DATA_PERIOD)
 
 
 
@@ -60,7 +60,7 @@ VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
-XU1 CLK_OUT RST COMPERATOR START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+XU1 CLK RST COMPERATOR START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
 
 
 R0 d0 VDD_1V8 1k
@@ -79,9 +79,10 @@ R_Running running VDD_1V8 1k
 * MEASURES
 *----------------------------------------------------------------
 
-.save all
+.save V(CLK) V(RST) V(COMPERATOR) V(START)
+.save V(temp_reset) V(ready) V(running)
 .save V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
-
+*.save all
 *----------------------------------------------------------------
 
 * PROBE
@@ -109,12 +110,12 @@ tran 10p 1n 1p
 *quit
 #else
 
-tran 1n 20u 1n
+tran 1n 400u 1p
     
 *dc TEMP -40 125 1
 write
 
-plot V(CLK_OUT)
+*plot V(CLK_OUT)
 
 *Controlller input
 plot V(RST) V(START) V(COMPERATOR)
@@ -125,6 +126,9 @@ plot V(ready) V(running) V(temp_reset)
 plot V(running) V(COMPERATOR)
 
 plot V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
+quit
 #endif
 .endc
 .end
+
+

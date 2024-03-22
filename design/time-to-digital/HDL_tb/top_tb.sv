@@ -8,6 +8,8 @@ module top_tb;
 
     always #1 clk  = ~clk;
 
+    always #10 data_in  = ~data_in;
+
     initial begin
         clk = 0;
         rst = 0;
@@ -16,29 +18,12 @@ module top_tb;
         #10 rst = 0;
         #10 start = 1;
         #10 start = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
+
 
         wait(ready == 1);
-        #10
         #10 start = 1;
         #10 start = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
-        #10 data_in = 1;
-        #10 data_in = 0;
+
         wait(ready == 1);
         #10 
         $display("------------------------");
@@ -47,13 +32,13 @@ module top_tb;
         #10 $finish;
     end
 
-    initial begin
-        #1000 
+/*     initial begin
+        #2000 
         $display("------------------------");
         $display("Test Temeout!");
         $display("------------------------");
         //$finish;
-    end
+    end */
 
     initial begin
         $dumpfile("top_tb.vcd");

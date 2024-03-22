@@ -200,12 +200,12 @@ C {SUN_TR_SKY130NM/SUNTR_RPPO16.sym} 1750 -310 3 0 {name=x8 }
 C {devices/lab_pin.sym} 1750 -290 2 1 {name=p19 sig_type=std_logic lab=VSS}
 C {devices/lab_pin.sym} 1550 -560 0 1 {name=p20 sig_type=std_logic lab=VDD_1V8}
 C {CNR_ATR_SKY130NM/CNRATR_NCH_4C8F0.sym} 1720 -410 0 1 {name=x6 }
-C {CNR_ATR_SKY130NM/CNRATR_PCH_8C8F0.sym} 1010 -560 0 1 {name=x5 }
-C {CNR_ATR_SKY130NM/CNRATR_PCH_8C8F0.sym} 1320 -560 0 0 {name=x1 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_8C4F0.sym} 1010 -560 0 1 {name=x5 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_8C4F0.sym} 1320 -560 0 0 {name=x1 }
 C {SUN_TR_SKY130NM/SUNTR_RPPO2.sym} 1860 -840 1 0 {name=x12 }
 C {devices/vsource.sym} 1170 -670 0 0 {name=V_ITOT1 value=0 savecurrent=false}
 C {devices/vsource.sym} 1790 -860 3 0 {name=V_ITOT2 value=0 savecurrent=false}
-C {CNR_ATR_SKY130NM/CNRATR_PCH_2C12F0.sym} 1480 -560 0 0 {name=x2 }
+C {CNR_ATR_SKY130NM/CNRATR_PCH_8C4F0.sym} 1480 -560 0 0 {name=x2 }
 C {CNR_GR04_SKY130NM/CNR_GR04_RING_OSC_PK.sym} 1640 -140 0 0 {name=x13}
 C {devices/lab_pin.sym} 1490 -150 0 0 {name=p7 sig_type=std_logic lab=VDD_1V8}
 C {devices/lab_pin.sym} 1490 -130 0 0 {name=p10 sig_type=std_logic lab=VSS}
