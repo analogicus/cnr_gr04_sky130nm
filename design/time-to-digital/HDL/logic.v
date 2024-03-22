@@ -1,7 +1,7 @@
 module controller
-#(parameter COUNT_TIME_BITS = 10
+#(parameter COUNT_TIME_BITS = 16
 )(
-    input reg clk, rst, start,
+    input reg clk, rst, start, pulse_counter_full,
     output wire ready, clear, running
 );
     localparam WIDTH = COUNT_TIME_BITS -1;
@@ -16,6 +16,7 @@ module controller
     always @(posedge clk or posedge rst) begin
         if (rst==1'b1) begin
             state <= IDLE;
+            count_time <= {COUNT_TIME_BITS{1'b0}};
         end else begin
             state <= state;
             count_time <= count_time;
@@ -30,8 +31,9 @@ module controller
                     count_time <= {COUNT_TIME_BITS{1'b0}};
                 end
                 RUNNING: begin
-                    if(count_time == {COUNT_TIME_BITS{1'b1}}) begin
+                    if(pulse_counter_full==1'b1) begin
                         state <= IDLE;
+                        $display("\t\t\t\t count_time: dec:%d \t bin:%b", count_time, count_time);
                     end else begin
                         count_time <= count_time + 1;
                     end
@@ -121,11 +123,14 @@ module edge_detector
                 end
             end
             EDGE_DETECTED: begin
+                //$display("\t\t\t\t edge detected");
                 state <= RESET;
             end
             RESET: begin
+                
                 if(reset_counter == {RESET_COUNTER_BITS{1'b1}}) begin
                     state <= IDLE;
+                    //$display("\t\t\t\t reset");
                 end else begin
                     reset_counter <= reset_counter + 1;
                 end
@@ -140,6 +145,39 @@ module edge_detector
 endmodule
 
 module counter
+#(  parameter COUNTER_MAX = 10 )(
+    input reg  clk, rst, inc, clear, en,
+    output wire counter_full,
+    output wire [WIDTH:0] count_out
+);
+    localparam COUNTER_BITS = $clog2(COUNTER_MAX);
+    localparam WIDTH = COUNTER_BITS -1;
+    reg [WIDTH:0] counter;
+
+    always @(posedge clk or posedge rst) begin
+        counter <= counter;
+        if (rst==1'b1 || clear==1'b1) begin
+            counter <= {COUNTER_BITS{1'b0}};
+        end else begin
+
+
+            if (en==1 && inc==1)begin
+                if (counter == COUNTER_MAX-1) begin
+                    counter <= {COUNTER_BITS{1'b0}};
+                end else begin
+                    counter <= counter + 1;
+                    $display("\t\t\t\t pulse count: dec:%d \t bin:%b", counter, counter);
+                end
+            end      
+        
+        end
+    end
+    assign counter_full = (counter == COUNTER_MAX-1);
+    assign count_out = counter;
+endmodule
+
+
+/* module counter
 #(  parameter COUNTER_BITS = 8 )(
     input reg  clk, rst, inc, clear, en,
     output wire [WIDTH:0] count_out
@@ -156,10 +194,10 @@ module counter
             if (clear) begin
                 counter <= {COUNTER_BITS{1'b0}};
             end else if (en==1 && inc==1) begin
-                counter <= counter - 1;
+                counter <= counter + 1;
             end
         end
         
     end
     assign count_out = counter;
-endmodule
+endmodule */
