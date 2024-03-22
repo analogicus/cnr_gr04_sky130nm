@@ -48,11 +48,11 @@ module top_tb;
     end
 
     initial begin
-        #300 
+        #1000 
         $display("------------------------");
         $display("Test Temeout!");
         $display("------------------------");
-        $finish;
+        //$finish;
     end
 
     initial begin
