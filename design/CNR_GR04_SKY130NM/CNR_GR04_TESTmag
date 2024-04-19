@@ -1,0 +1,106 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1712301966
+<< error_s >>
+rect 0 1372 64 1378
+rect 130 1372 194 1378
+rect 0 1338 12 1372
+rect 130 1338 142 1372
+rect 0 1332 64 1338
+rect 130 1332 194 1338
+rect 600 1200 648 2358
+rect 800 1372 864 1378
+rect 930 1372 994 1378
+rect 800 1338 812 1372
+rect 930 1338 942 1372
+rect 800 1332 864 1338
+rect 930 1332 994 1338
+rect 0 802 64 808
+rect 130 802 194 808
+rect 800 802 864 808
+rect 930 802 994 808
+rect 0 768 12 802
+rect 130 768 142 802
+rect 800 768 812 802
+rect 930 768 942 802
+rect 0 762 64 768
+rect 130 762 194 768
+rect 800 762 864 768
+rect 930 762 994 768
+rect 174 -70 198 -20
+rect 202 -70 226 -21
+rect 800 -598 864 -592
+rect 930 -598 994 -592
+rect 800 -632 812 -598
+rect 930 -632 942 -598
+rect 800 -638 864 -632
+rect 930 -638 994 -632
+rect 720 -1564 1080 -1560
+<< pdiodelvtc >>
+rect 720 -1600 1080 -1560
+<< locali >>
+rect -140 1580 -40 1980
+rect 240 1580 340 1980
+rect 660 1580 760 1980
+rect 1040 1580 1140 1980
+rect -140 160 -40 560
+rect 240 160 340 560
+rect 660 160 760 560
+rect 1040 160 1140 560
+rect -140 -1240 -40 -840
+rect 240 -1240 340 -840
+rect 660 -1240 760 -840
+rect 1040 -1240 1140 -840
+rect -80 -1600 280 -1560
+rect -200 -1700 1200 -1600
+<< metal1 >>
+rect -20 2170 1010 2240
+rect 74 2119 120 2170
+rect 874 2120 920 2170
+rect 74 -20 120 30
+rect -3 -70 198 -20
+rect 202 -70 1005 -21
+rect -9 -638 204 -590
+rect 74 -682 120 -638
+rect 75 -951 120 -941
+rect 872 -950 924 -944
+rect 64 -1003 70 -951
+rect 122 -1003 128 -951
+rect 872 -1008 924 -1002
+rect -12 -1476 1014 -1420
+<< via1 >>
+rect 70 -1003 122 -951
+rect 872 -1002 924 -950
+<< metal2 >>
+rect 70 -951 122 -945
+rect 866 -953 872 -950
+rect 122 -1000 872 -953
+rect 866 -1002 872 -1000
+rect 924 -1002 930 -950
+rect 70 -1009 122 -1003
+use sky130_fd_pr__nfet_01v8_5CE34N  sky130_fd_pr__nfet_01v8_5CE34N_0
+timestamp 1712211083
+transform 1 0 897 0 1 370
+box -297 -570 297 570
+use sky130_fd_pr__nfet_01v8_5CE34N  sky130_fd_pr__nfet_01v8_5CE34N_1
+timestamp 1712211083
+transform 1 0 897 0 1 -1030
+box -297 -570 297 570
+use sky130_fd_pr__nfet_01v8_5CE34N  sky130_fd_pr__nfet_01v8_5CE34N_2
+timestamp 1712211083
+transform 1 0 97 0 1 370
+box -297 -570 297 570
+use sky130_fd_pr__nfet_01v8_5CE34N  sky130_fd_pr__nfet_01v8_5CE34N_3
+timestamp 1712211083
+transform 1 0 97 0 1 -1030
+box -297 -570 297 570
+use sky130_fd_pr__pfet_01v8_48NGR2  sky130_fd_pr__pfet_01v8_48NGR2_1
+timestamp 1712211083
+transform 1 0 97 0 1 1779
+box -297 -579 297 579
+use sky130_fd_pr__pfet_01v8_48NGR2  sky130_fd_pr__pfet_01v8_48NGR2_2
+timestamp 1712211083
+transform 1 0 897 0 1 1779
+box -297 -579 297 579
+<< end >>

@@ -1,0 +1,108 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1713447325
+<< checkpaint >>
+rect -980 -1518 1549 1003
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+rect 0 -1600 200 -1400
+use CNRATR_NCH_4C2F0  CNRATR_NCH_4C2F0_0
+timestamp 1713447325
+transform 1 0 0 0 1 -1600
+box 0 -1200 281 950
+use CNRATR_NCH_4C2F0  CNRATR_NCH_4C2F0_1
+timestamp 1713447325
+transform 1 0 666 0 1 -1600
+box 0 -1200 281 950
+use CNRATR_NCH_4C2F0  CNRATR_NCH_4C2F0_2
+timestamp 1713447325
+transform 1 0 1332 0 1 -1600
+box 0 -1200 281 950
+use CNRATR_NCH_4C2F0  CNRATR_NCH_4C2F0_3
+timestamp 1713447325
+transform 1 0 1998 0 1 -1600
+box 0 -1200 281 950
+use CNRATR_NCH_4C8F0  CNRATR_NCH_4C8F0_0
+timestamp 1712904040
+transform 1 0 1504 0 1 -1600
+box -53 -1200 1477 1351
+use CNRATR_NCH_12C8F0  CNRATR_NCH_12C8F0_0
+timestamp 1713447325
+transform 1 0 4564 0 1 -1600
+box 0 -1200 713 1334
+use CNRATR_PCH_4C4F0  CNRATR_PCH_4C4F0_0
+timestamp 1713447325
+transform 1 0 550 0 1 -1600
+box 0 -1200 425 959
+use CNRATR_PCH_8C1F2  CNRATR_PCH_8C1F2_0
+timestamp 1713447325
+transform 1 0 0 0 1 -1600
+box 0 -1200 223 1151
+use CNRATR_PCH_12C2F0  x1
+timestamp 1713447325
+transform 1 0 0 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x2
+timestamp 1713447325
+transform 1 0 5 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x3
+timestamp 1713447325
+transform 1 0 6 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x4
+timestamp 1713447325
+transform 1 0 7 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x5
+timestamp 1713447325
+transform 1 0 8 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x6
+timestamp 1713447325
+transform 1 0 1 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x7
+timestamp 1713447325
+transform 1 0 2 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x8
+timestamp 1713447325
+transform 1 0 3 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_PCH_12C2F0  x9
+timestamp 1713447325
+transform 1 0 4 0 1 -1600
+box 0 -1200 281 1343
+use CNRATR_NCH_4C8F0  x10
+timestamp 1712904040
+transform 1 0 3034 0 1 -1600
+box -53 -1200 1477 1351
+use CNRATR_NCH_4C2F0  x11
+timestamp 1713447325
+transform 1 0 0 0 1 600
+box 0 -1200 281 950
+use CNRATR_NCH_4C2F0  x12
+timestamp 1713447325
+transform 1 0 1 0 1 600
+box 0 -1200 281 950
+use CNRATR_NCH_4C2F0  x13
+timestamp 1713447325
+transform 1 0 2 0 1 600
+box 0 -1200 281 950
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 VDD_1V8
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 OPAMP_VOUT
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 VIN
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 256 0 0 0 VIP
+port 3 nsew
+flabel metal1 0 -1600 200 -1400 0 FreeSans 256 0 0 0 VSS
+port 4 nsew
+<< end >>
