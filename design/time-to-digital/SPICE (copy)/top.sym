@@ -1,0 +1,51 @@
+v {xschem version=3.4.4 file_version=1.2
+}
+G {}
+K {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+spice_sym_def=".include top.cir"}
+V {}
+S {type=subcircuit
+format="@name @pinlist @symname"
+template="name=x1"
+spice_sym_def=".include top.cir"}
+E {}
+L 4 0 -0 1600 -0 {}
+L 4 0 0 0 840 {}
+L 4 0 840 1600 840 {}
+L 4 1600 0 1600 840 {}
+L 4 -160 120 0 120 {}
+L 4 -160 220 0 220 {}
+L 4 -160 320 0 320 {}
+L 4 1600 120 1740 120 {}
+L 4 1600 220 1740 220 {}
+L 4 1600 320 1740 320 {}
+L 4 1600 420 1740 420 {}
+L 4 1600 520 1740 520 {}
+B 5 -162.5 117.5 -157.5 122.5 {name=XXX
+dir=in}
+B 5 -162.5 217.5 -157.5 222.5 {name=XXX
+dir=in
+}
+B 5 -162.5 317.5 -157.5 322.5 {name=XXX
+dir=inout}
+B 5 1737.5 117.5 1742.5 122.5 {name=XXX
+dir=out}
+B 5 1737.5 217.5 1742.5 222.5 {name=XXX
+dir=inout}
+B 5 1737.5 317.5 1742.5 322.5 {name=XXX
+dir=inout}
+B 5 1737.5 417.5 1742.5 422.5 {name=XXX
+dir=inout}
+B 5 1737.5 517.5 1742.5 522.5 {name=XXX
+dir=inout}
+T {Verilog} 620 180 0 0 2 2 {}
+T {Data Out} 1320 80 0 0 1 1 {}
+T {Start} 1420 180 0 0 1 1 {}
+T {Rst} 1440 460 0 0 1 1 {}
+T {Ready} 1380 260 0 0 1 1 {}
+T {Running} 1340 360 0 0 1 1 {}
+T {Data In} 40 80 0 0 1 1 {}
+T {Temp Reset} 40 180 0 0 1 1 {}
+T {CLK} 40 280 0 0 1 1 {}

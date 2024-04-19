@@ -1,0 +1,1 @@
+yosys -c /nix/store/qfxhwcwym73wnch7k4jwq8rmf13yrwiz-python3-3.11.6-env/lib/python3.11/site-packages/openlane/scripts/yosys/synthesize.tcl

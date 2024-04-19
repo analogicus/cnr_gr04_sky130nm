@@ -8,12 +8,13 @@
 .include ../../../work/xsch/CNR_GR04_T2I_S.spice
 .include ../../../design/time-to-digital/SPICE/top.cir
 #endif
+.include ../../../design/time-to-digital/HDL/runs/RUN_2024-04-12_12-12-37/final/spice/top.spice
 
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
-.option TNOM=60 GMIN=1e-15
-.option TEMP=120
+.option TNOM=27 GMIN=1e-15
+.option TEMP=27
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -60,7 +61,9 @@ VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
-XU1 CLK RST COMPERATOR START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+*XU1 CLK RST COMPERATOR START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+
+XU2 VSS VDD_1V8 CLK d0 d1 d2 d3 d4 d5 d6 COMPERATOR ready RST running START temp_reset top
 
 
 R0 d0 VDD_1V8 1k
@@ -82,7 +85,8 @@ R_Running running VDD_1V8 1k
 .save V(CLK) V(RST) V(COMPERATOR) V(START)
 .save V(temp_reset) V(ready) V(running)
 .save V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
-*.save all
+.save V(VDD) -I(VDD)
+.save all
 *----------------------------------------------------------------
 
 * PROBE
@@ -91,7 +95,7 @@ R_Running running VDD_1V8 1k
 #ifdef Debug
 .save all
 #else
-.save ${VPORTS}
+.save ${VPORTS} 
 #endif
 
 *----------------------------------------------------------------
@@ -110,25 +114,21 @@ tran 10p 1n 1p
 *quit
 #else
 
-tran 1n 400u 1p
+*tran 1n 400u 1p
+tran 1n 20u 0
     
 *dc TEMP -40 125 1
 write
 
 *plot V(CLK_OUT)
-
 *Controlller input
 plot V(RST) V(START) V(COMPERATOR)
 
 *Controller output
-plot V(ready) V(running) V(temp_reset)
-
-plot V(running) V(COMPERATOR)
-
-plot V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
+*plot V(ready) V(running) V(temp_reset) 
+*plot V(running) V(COMPERATOR)
+*plot V(d7) V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
 quit
 #endif
 .endc
 .end
-
-

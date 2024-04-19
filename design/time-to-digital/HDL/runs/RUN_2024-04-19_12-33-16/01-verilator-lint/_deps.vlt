@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/home/peter/aicex/ip/cnr_gr04_sky130nm/design/time-to-digital/HDL/runs/RUN_2024-04-19_12-33-16/tmp/c15f755842554e46a92fc38c87f9cc51.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/home/peter/aicex/ip/cnr_gr04_sky130nm/design/time-to-digital/HDL/runs/RUN_2024-04-19_12-33-16/tmp/c15f755842554e46a92fc38c87f9cc51.bb.v"

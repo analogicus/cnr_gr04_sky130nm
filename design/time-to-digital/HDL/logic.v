@@ -13,8 +13,8 @@ module controller
     reg [WIDTH:0] count_time;
     reg [1:0] state;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst==1'b1) begin
+    always @(posedge clk) begin
+        if (rst) begin
             state <= IDLE;
             count_time <= {COUNT_TIME_BITS{1'b0}};
         end else begin
@@ -38,14 +38,14 @@ module controller
                         count_time <= count_time + 1;
                     end
                 end
-                default: state <= IDLE;
+                default: state <= IDLE; //The clock period for the design.
             endcase
         end
     end
 
-    assign ready = (state == IDLE);
-    assign clear = (state == STARTING);
-    assign running = (state == RUNNING);
+    assign ready    = (state == IDLE);
+    assign clear    = (state == STARTING);
+    assign running  = (state == RUNNING);
 endmodule
     
 
@@ -59,7 +59,7 @@ module synchronizer
     localparam WIDTH = SYNC_BITS -1;
     reg [WIDTH:0] sync_buffer;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst==1'b1) begin
             sync_buffer <= {SYNC_BITS{1'b0}};
         end else begin
@@ -106,7 +106,7 @@ module edge_detector
     reg [1:0] input_buffer;
     reg [WIDTH:0] reset_counter;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         if (rst==1'b1) begin
             input_buffer <= 2'b00;
             reset_counter <= {RESET_COUNTER_BITS{1'b0}};
@@ -123,14 +123,14 @@ module edge_detector
                 end
             end
             EDGE_DETECTED: begin
-                //$display("\t\t\t\t edge detected");
+                $display("\t\t\t\t edge detected");
                 state <= RESET;
             end
             RESET: begin
                 
                 if(reset_counter == {RESET_COUNTER_BITS{1'b1}}) begin
                     state <= IDLE;
-                    //$display("\t\t\t\t reset");
+                    $display("\t\t\t\t reset");
                 end else begin
                     reset_counter <= reset_counter + 1;
                 end
@@ -140,8 +140,8 @@ module edge_detector
         end
         
     end
-    assign temp_reset = (state == RESET);
-    assign data_out = (state == EDGE_DETECTED);
+    assign temp_reset   = (state == RESET);
+    assign data_out     = (state == EDGE_DETECTED);
 endmodule
 
 module counter
@@ -152,9 +152,10 @@ module counter
 );
     localparam COUNTER_BITS = $clog2(COUNTER_MAX);
     localparam WIDTH = COUNTER_BITS -1;
+    //localparam WIDTH = 31;
     reg [WIDTH:0] counter;
 
-    always @(posedge clk or posedge rst) begin
+    always @(posedge clk) begin
         counter <= counter;
         if (rst==1'b1 || clear==1'b1) begin
             counter <= {COUNTER_BITS{1'b0}};
@@ -172,8 +173,8 @@ module counter
         
         end
     end
-    assign counter_full = (counter == COUNTER_MAX-1);
-    assign count_out = counter;
+    assign counter_full     = (counter == COUNTER_MAX-1);
+    assign count_out        = counter;
 endmodule
 
 

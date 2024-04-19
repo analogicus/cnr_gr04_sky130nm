@@ -1,0 +1,55 @@
+* Title: dff_tb.cir
+*.include "top.cir"  
+*.include ../../../design/time-to-digital/HDL/runs/RUN_2024-04-12_12-12-37/final/spice/top.spice
+*.include  ../HDL/runs/RUN_2024-04-19_12-33-16/final/spice/top.spice
+.include  /home/peter/aicex/ip/cnr_gr04_sky130nm/work/top.spice
+*CLK Control
+.param CLK_FREQ = 20MEG
+.param PERIOD = 1/CLK_FREQ
+.param HALF_PERIOD = PERIOD/2
+
+*Simulation Control
+
+.param SIM_STEP = 1n
+.param SIM_START = 1n
+.param SIM_STOP = 500000000000*PERIOD
+
+
+*Inputs
+.param RESET_START = 2*PERIOD
+.param START = 4*PERIOD
+.param DATA_HALF_PERIOD = 10*PERIOD
+.param DATA_PERIOD = 20*PERIOD
+
+
+VDD     VDD_1V8    VSS  dc   1.8
+VSS     VSS        0    dc     0
+
+
+VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
+VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
+VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
+VDATA   data_in VSS   PULSE(0 1.8 0           0 0 DATA_HALF_PERIOD DATA_PERIOD)
+
+R1 ready        VSS 1k
+R2 running      VSS 1k
+R3 temp_reset   VSS 1k
+
+
+
+*XDUT CLK RST data_in START ready running temp_reset d7 d6 d5 d4 d3 d2 d1 d0 top_verilog
+XU1 VSS VDD_1V8 CLK d0 d1 d2 d3 d4 d5 d6 COMPERATOR ready RST running START temp_reset top
+
+.control
+
+save all
+optran 1 1 1 100p 20u 0
+tran 1n 100u 1n
+
+*plot V(CLK)
+plot V(RST) V(START) V(data_in)
+plot V(ready) V(running) V(temp_reset)
+
+.endc
+.end
+

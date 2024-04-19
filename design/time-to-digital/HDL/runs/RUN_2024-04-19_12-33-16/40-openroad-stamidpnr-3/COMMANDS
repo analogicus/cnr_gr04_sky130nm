@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /home/peter/aicex/ip/cnr_gr04_sky130nm/design/time-to-digital/HDL/runs/RUN_2024-04-19_12-33-16/40-openroad-stamidpnr-3/or_metrics_out.json /nix/store/qfxhwcwym73wnch7k4jwq8rmf13yrwiz-python3-3.11.6-env/lib/python3.11/site-packages/openlane/scripts/openroad/sta/corner.tcl

@@ -1,0 +1,7 @@
+{
+    "DESIGN_NAME": "top",
+    "VERILOG_FILES": ["dir::top.v"],
+    "CLOCK_PERIOD": 19,
+    "CLOCK_PORT": "clk",
+    "PDK": "sky130B"
+  }

@@ -1,0 +1,38 @@
+digraph "top" {
+label="top";
+rankdir="LR";
+remincross=true;
+n1 [ shape=diamond, label="pulse_counter_full", color="black", fontcolor="black" ];
+n2 [ shape=diamond, label="edge_detected", color="black", fontcolor="black" ];
+n3 [ shape=diamond, label="clear", color="black", fontcolor="black" ];
+n4 [ shape=octagon, label="count_out", color="black", fontcolor="black" ];
+n5 [ shape=octagon, label="temp_reset", color="black", fontcolor="black" ];
+n6 [ shape=octagon, label="running", color="black", fontcolor="black" ];
+n7 [ shape=octagon, label="ready", color="black", fontcolor="black" ];
+n8 [ shape=octagon, label="start", color="black", fontcolor="black" ];
+n9 [ shape=octagon, label="data_in", color="black", fontcolor="black" ];
+n10 [ shape=octagon, label="rst", color="black", fontcolor="black" ];
+n11 [ shape=octagon, label="clk", color="black", fontcolor="black" ];
+c15 [ shape=record, label="{{<p3> clear|<p11> clk|<p12> en|<p13> inc|<p10> rst}|data_counter_inst\ncounter|{<p4> count_out|<p14> counter_full}}",  ];
+c17 [ shape=record, label="{{<p11> clk|<p9> data_in|<p10> rst}|data_edge_detector_inst\nedge_detector|{<p16> data_out|<p5> temp_reset}}",  ];
+c18 [ shape=record, label="{{<p11> clk|<p1> pulse_counter_full|<p10> rst|<p8> start}|controller_inst\ncontroller|{<p3> clear|<p7> ready|<p6> running}}",  ];
+c15:p14:e -> n1:w [color="black", fontcolor="black", label=""];
+n1:e -> c18:p1:w [color="black", fontcolor="black", label=""];
+n10:e -> c15:p10:w [color="black", fontcolor="black", label=""];
+n10:e -> c17:p10:w [color="black", fontcolor="black", label=""];
+n10:e -> c18:p10:w [color="black", fontcolor="black", label=""];
+n11:e -> c15:p11:w [color="black", fontcolor="black", label=""];
+n11:e -> c17:p11:w [color="black", fontcolor="black", label=""];
+n11:e -> c18:p11:w [color="black", fontcolor="black", label=""];
+c17:p16:e -> n2:w [color="black", fontcolor="black", label=""];
+n2:e -> c15:p13:w [color="black", fontcolor="black", label=""];
+c18:p3:e -> n3:w [color="black", fontcolor="black", label=""];
+n3:e -> c15:p3:w [color="black", fontcolor="black", label=""];
+c15:p4:e -> n4:w [color="black", fontcolor="black", style="setlinewidth(3)", label=""];
+c17:p5:e -> n5:w [color="black", fontcolor="black", label=""];
+c18:p6:e -> n6:w [color="black", fontcolor="black", label=""];
+n6:e -> c15:p12:w [color="black", fontcolor="black", label=""];
+c18:p7:e -> n7:w [color="black", fontcolor="black", label=""];
+n8:e -> c18:p8:w [color="black", fontcolor="black", label=""];
+n9:e -> c17:p9:w [color="black", fontcolor="black", label=""];
+}

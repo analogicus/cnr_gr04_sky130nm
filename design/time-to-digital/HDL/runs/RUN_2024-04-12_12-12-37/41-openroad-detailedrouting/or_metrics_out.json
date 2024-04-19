@@ -1,0 +1,17 @@
+{
+	"route__net": 99,
+	"route__net__special": 2,
+	"route__drc_errors__iter:1": 12,
+	"route__wirelength__iter:1": 1493,
+	"route__drc_errors__iter:2": 16,
+	"route__wirelength__iter:2": 1498,
+	"route__drc_errors__iter:3": 23,
+	"route__wirelength__iter:3": 1473,
+	"route__drc_errors__iter:4": 0,
+	"route__wirelength__iter:4": 1468,
+	"route__drc_errors": 0,
+	"route__wirelength": 1468,
+	"route__vias": 595,
+	"route__vias__singlecut": 595,
+	"route__vias__multicut": 0
+}

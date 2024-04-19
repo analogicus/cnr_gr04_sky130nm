@@ -1,0 +1,21 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1712311827
+use CNRATR_NCH_8C4F0  CNRATR_NCH_8C4F0_0 ~/aicex/ip/cnr_gr04_sky130nm/design/CNR_ATR_SKY130NM
+timestamp 1712008800
+transform 1 0 -28 0 1 7908
+box -184 -124 1912 1006
+use CNRATR_NCH_8C4F0  CNRATR_NCH_8C4F0_1
+timestamp 1712008800
+transform 1 0 -6 0 1 -1542
+box -184 -124 1912 1006
+use CNRATR_NCH_8C4F0  CNRATR_NCH_8C4F0_2
+timestamp 1712008800
+transform 1 0 -16 0 1 -8
+box -184 -124 1912 1006
+use sky130_fd_pr__cap_mim_m3_2_WXHTNJ  sky130_fd_pr__cap_mim_m3_2_WXHTNJ_0
+timestamp 1712311827
+transform 1 0 2453 0 1 12089
+box -7447 -2081 7469 2081
+<< end >>

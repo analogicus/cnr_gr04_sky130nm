@@ -1,2 +1,3 @@
 source ../tech/magic/.magicrc
 addpath ../design/CNR_GR04_SKY130NM
+addpath /opt/pdk

@@ -1,0 +1,57 @@
+{
+   "creator": "Yosys 0.38 (git sha1 543faed9c8c, clang++ 16.0.6 -fPIC -Os)",
+   "invocation": "stat -json -liberty /home/peter/aicex/ip/cnr_gr04_sky130nm/design/time-to-digital/HDL/runs/RUN_2024-04-19_12-32-54/tmp/eba0d7a56b1d46fdbb8517e5624e3093.lib ",
+   "modules": {
+      "\\top": {
+         "num_wires":         72,
+         "num_wire_bits":     82,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 23,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         76,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 21,
+            "$_AND_": 1,
+            "$_DFF_P_": 6,
+            "$_MUX_": 1,
+            "$_NAND_": 8,
+            "$_NOR_": 2,
+            "$_NOT_": 2,
+            "$_ORNOT_": 3,
+            "$_OR_": 14,
+            "$_SDFFE_PN0P_": 7,
+            "$_SDFFE_PP0P_": 4,
+            "$_XNOR_": 3,
+            "$_XOR_": 4
+         }
+      }
+   },
+      "design": {
+         "num_wires":         72,
+         "num_wire_bits":     82,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 23,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         76,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 21,
+            "$_AND_": 1,
+            "$_DFF_P_": 6,
+            "$_MUX_": 1,
+            "$_NAND_": 8,
+            "$_NOR_": 2,
+            "$_NOT_": 2,
+            "$_ORNOT_": 3,
+            "$_OR_": 14,
+            "$_SDFFE_PN0P_": 7,
+            "$_SDFFE_PP0P_": 4,
+            "$_XNOR_": 3,
+            "$_XOR_": 4
+         }
+      }
+}
+
