@@ -54,13 +54,13 @@ VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
 VSTART  START   VSS   PULSE(0 1.8 START       0 0 PERIOD SIM_STOP)
 *VDATA   data_in VSS   PULSE(0 1.8 0          0 0 DATA_HALF_PERIOD DATA_PERIOD)
 
-V_RST_CMP temp_reset VSS PULSE(0 1.8 1u 0 0 2u 4u)
+*V_RST_CMP temp_reset VSS PULSE(0 1.8 1u 0 0 2u 4u)
 
 *-----------------------------------------------------------------
 * DUT
 *-----------------------------------------------------------------
 .include ../xdut.spi
-XU1 CLK RST COMPERATOR START ready running temp_reset_tmp d6 d5 d4 d3 d2 d1 d0 top_verilog
+XU1 CLK RST COMPERATOR START ready running temp_reset d6 d5 d4 d3 d2 d1 d0 top_verilog
 
 *XU2 VSS VDD_1V8 CLK d0 d1 d2 d3 d4 d5 d6 COMPERATOR ready RST running START temp_reset top
 
@@ -75,7 +75,7 @@ R6 d6 VDD_1V8 1k
 *R7 d7 VDD_1V8 1k
 
 R_Running running VDD_1V8 1k
-R_RST_CMP temp_reset_tmp temp_reset 1k
+*R_RST_CMP temp_reset_tmp temp_reset 1k
 
 
 *----------------------------------------------------------------
