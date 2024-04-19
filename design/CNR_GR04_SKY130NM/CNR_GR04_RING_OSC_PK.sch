@@ -101,9 +101,9 @@ C {devices/opin.sym} 910 60 0 0 {name=p3 lab=OUT}
 C {SUN_TR_SKY130NM/SUNTR_IVX1_CV.sym} 160 60 0 0 {name=x1 }
 C {SUN_TR_SKY130NM/SUNTR_IVX1_CV.sym} 400 60 0 0 {name=x2 }
 C {SUN_TR_SKY130NM/SUNTR_IVX1_CV.sym} 640 60 0 0 {name=x3 }
-C {sky130_fd_pr/cap_mim_m3_2.sym} 300 90 0 0 {name=C1 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 540 90 0 0 {name=C2 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
-C {sky130_fd_pr/cap_mim_m3_2.sym} 780 90 0 0 {name=C3 model=cap_mim_m3_2 W=1 L=1 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 300 90 0 0 {name=C1 model=cap_mim_m3_2 W=10 L=10 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 540 90 0 0 {name=C2 model=cap_mim_m3_2 W=10 L=10 MF=1 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_2.sym} 780 90 0 0 {name=C3 model=cap_mim_m3_2 W=10 L=10 MF=1 spiceprefix=X}
 C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 160 -90 0 0 {name=x4 }
 C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 400 -90 0 0 {name=x5 }
 C {CNR_ATR_SKY130NM/CNRATR_PCH_2C1F2.sym} 640 -90 0 0 {name=x6 }
