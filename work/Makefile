@@ -12,9 +12,9 @@
 
 PREFIX=
 LIB=CNR_GR04_SKY130NM
-CELL=CNR_GR04
+CELL=CNR_GR04_T2I_S
 
 #- Provide cells you want to check for the lvsall drcall commands
-CELLS = CNR_GR04
+CELLS = CNR_GR04_T2I_S
 
 include ../tech/make/core.make
