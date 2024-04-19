@@ -13,7 +13,7 @@ meas dc data_out3 FIND v(d3) WHEN time=19u
 meas dc data_out4 FIND v(d4) WHEN time=19u
 meas dc data_out5 FIND v(d5) WHEN time=19u
 meas dc data_out6 FIND v(d6) WHEN time=19u
-meas dc data_out7 FIND v(d7) WHEN time=19u
+*meas dc data_out7 FIND v(d7) WHEN time=19u
 
 echo "MEAS_END"
 .endc

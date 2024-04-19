@@ -5,8 +5,8 @@ all: typical etc mc summary
 include ../../tech/make/sim.make
 
 TB=tran
-VIEW=Sch
-#VIEW=Lay
+#VIEW=Sch
+VIEW=Lay
 CELL=CNR_GR04_T2I_S
 LIB =CNR_GR04_SKY130NM
 OPT=
