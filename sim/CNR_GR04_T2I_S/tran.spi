@@ -8,13 +8,13 @@
 .include ../../../work/xsch/CNR_GR04_T2I_S.spice
 #endif
 .include ../../../design/time-to-digital/SPICE/top.cir
-.include ../../../design/time-to-digital/HDL/runs/RUN_2024-04-12_12-12-37/final/spice/top.spice
+*.include ../../../design/time-to-digital/HDL/runs/RUN_2024-04-12_12-12-37/final/spice/top.spice
 
 *-----------------------------------------------------------------
 * OPTIONS
 *-----------------------------------------------------------------
 .option TNOM=27 GMIN=1e-15
-.option TEMP=27
+.option TEMP=125
 
 *-----------------------------------------------------------------
 * PARAMETERS
@@ -47,7 +47,7 @@ VDD  VDD_1V8  VSS  dc 1.8
 
 *VRESET RESET 0 pulse 0 1.8 0 0 0 50ns 2000ns
 
-R_reset RESET temp_reset 0
+R_reset RESET temp_reset 1k
 
 VCLK    CLK     VSS   PULSE(0 1.8 0           0 0 HALF_PERIOD PERIOD)
 VRST    RST     VSS   PULSE(0 1.8 RESET_START 0 0 PERIOD SIM_STOP)
@@ -64,7 +64,6 @@ XU1 CLK RST COMPERATOR START ready running temp_reset d6 d5 d4 d3 d2 d1 d0 top_v
 
 *XU2 VSS VDD_1V8 CLK d0 d1 d2 d3 d4 d5 d6 COMPERATOR ready RST running START temp_reset top
 
-
 R0 d0 VDD_1V8 1k
 R1 d1 VDD_1V8 1k
 R2 d2 VDD_1V8 1k
@@ -75,6 +74,7 @@ R6 d6 VDD_1V8 1k
 *R7 d7 VDD_1V8 1k
 
 R_Running running VDD_1V8 1k
+R_ready ready VDD_1V8 1K
 *R_RST_CMP temp_reset_tmp temp_reset 1k
 
 
@@ -114,20 +114,25 @@ tran 10p 1n 1p
 *quit
 #else
 
-*tran 1n 400u 1p
-tran 1n 20u 1p
+*tran 1n 200u 1p
+tran 1n 5u 1p
     
 *dc TEMP -40 125 1
 write
 
+meas tran start  TRIG v(running) VAL=0.5 RISE=1 
+meas tran stop   TRIG v(running) VAL=0.5 FALL=1
 *plot V(CLK_OUT)
 *Controlller input
-plot V(RST) V(START) V(COMPERATOR)
+*plot V(RST) V(START) V(COMPERATOR)
 
 *Controller output
-plot V(ready) V(running) V(temp_reset) 
-plot V(running) V(COMPERATOR)
-plot V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
+*plot V(ready) V(running) V(temp_reset) 
+*plot V(running) V(COMPERATOR)
+*plot V(d6) V(d5) V(d4) V(d3) V(d2) V(d1) V(d0)
+*plot V(temp_reset)
+*plot V(running)
+plot V(xdut.vcap) V(COMPERATOR)
 
 #endif
 .endc

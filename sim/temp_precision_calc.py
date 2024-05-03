@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 
-filepath = "output_tran/tran_SchGtKttTtVt.raw"
-l = ltspice.Ltspice(filepath)
-l.parse()
+#filepath = "output_tran/tran_SchGtKttTtVt.raw"
+#l = ltspice.Ltspice(filepath)
+#l.parse()
 
-TEMP = [-40, -20, 0, 20, 40, 60, 80, 100, 120]
+TEMP = [-40, -20, 0, 20, 40, 60, 80, 100, 125]
 MEAS = [3235, 3137, 2941, 2843, 2741, 2647, 2647, 2549, 2549]
 
 #TEMP = l.get_data("temp-sweep")
@@ -30,8 +30,6 @@ print(BEST_FIT)
 
 figure, ax = plt.subplots(2, 1)
 
-
-
 #Plot Temp vs I_OUT and best fit
 ax[0].plot(TEMP, MEAS)
 ax[0].plot(TEMP, BEST_FIT)
@@ -39,7 +37,6 @@ ax[0].set_xlabel('Temperature (C)')
 ax[0].set_ylabel('CLK Cycles pr. 100 Temperature Pulses')
 ax[0].legend(['Simulated', 'Best Fit'])
 ax[0].grid(visible=True)
-
 
 P_ERROR = ((BEST_FIT - MEAS) / MEAS) * 100
 print("Max Precision Error: ", max(P_ERROR))
@@ -51,7 +48,5 @@ ax[1].set_xlabel(' Temperature (C)')
 ax[1].set_ylabel('Precision Error (%)')
 ax[1].legend(['Difference between Simulated and Best Fit'])
 ax[1].grid(visible=True)    
-
-
 
 plt.show()
